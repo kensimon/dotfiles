@@ -84,3 +84,7 @@ bindkey "\e[F" end-of-line
 # Make !$ and friends just work without having to hit enter twice.  (I live
 # dangerously.)
 setopt no_hist_verify
+
+# I don't really like zsh's autocorrect.
+setopt nocorrect
+setopt nocorrectall
