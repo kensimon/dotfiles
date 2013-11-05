@@ -1,0 +1,8 @@
+I use this directory by cloning it to ~/.dotfiles and using symlinks to actually use the configs.
+
+ie.
+
+ln -s .dotfiles/vim/vimrc .vimrc
+ln -s .dotfiles/zshrc .zshrc
+
+etc.
