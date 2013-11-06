@@ -15,6 +15,7 @@ $symlinks = {
   '.zshrc'        => 'zshrc',
   '.inputrc'      => 'inputrc',
   '.bash_profile' => 'bash_profile',
+  '.irbrc'        => 'irbrc',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
