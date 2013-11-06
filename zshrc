@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ken"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -42,14 +42,19 @@ DISABLE_LS_COLORS="false"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-export ZSH_THEME=ken
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# Setup rbenv (needs to be done before oh-my-zsh for the prompt to work with
+# rbenv.)
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$PATH:/Applications/MacVim.app/Contents/MacOS:/Users/ken/.rvm/gems/ruby-1.9.3-p374/bin:/Users/ken/.rvm/gems/ruby-1.9.3-p374@global/bin:/Users/ken/.rvm/rubies/ruby-1.9.3-p374/bin:/Users/ken/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/sbin:/sbin:/Users/ken/bin:/Users/ken/perl5/bin:/usr/local/sbin
+# Add macvim to path
+if [ -d /Applications/MacVim.app/Contents/MacOS ]; then
+    export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
+fi
 
+# ohmyzsh's colors are ugly
 unset LSCOLORS
 
 # do not bell on tab-completion
@@ -89,9 +94,4 @@ setopt no_hist_verify
 setopt nocorrect
 setopt nocorrectall
 
-if [ -e /Applications/MacVim.app/Contents/MacOS/Vim ]
-then
-  export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
-else
-  export EDITOR='vim'
-fi
+export EDITOR='vim'

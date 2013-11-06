@@ -6,3 +6,6 @@
 	path = vim
 	url = git@github.com:ninkendo/vimconfig
     branch = master
+[submodule "rbenv"]
+	path = rbenv
+	url = git://github.com/sstephenson/rbenv
