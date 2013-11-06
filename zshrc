@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ken"
+ZSH_THEME=""
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,6 +48,10 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 source $ZSH/oh-my-zsh.sh
+
+# Place my theme in my dotfiles dir so I don't have to maintain a downstream
+# fork of oh-my-zsh.
+source $HOME/.dotfiles/ken.zsh-theme
 
 # Add macvim to path
 if [ -d /Applications/MacVim.app/Contents/MacOS ]; then
