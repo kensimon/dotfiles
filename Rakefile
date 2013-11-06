@@ -30,6 +30,15 @@ $submodule_base_dirs.each do |path|
   git_submodule path
 end
 
+desc "Add rbenv-gemset plugin to rbenv"
+file './rbenv/plugins/rbenv-gemset' => ['./rbenv/.git'] do
+  # We clone instead of use a submodule so it can be gitignored... adding a
+  # submodule creates an issue where you have uncommitted changes in the rbenv
+  # repo.
+  Dir.chdir('./rbenv')
+  sh "git clone git://github.com/jf/rbenv-gemset.git plugins/rbenv-gemset"
+end
+
 desc "Add ruby-build plugin to rbenv"
 file './rbenv/plugins/ruby-build' => ['./rbenv/.git'] do
   # We clone instead of use a submodule so it can be gitignored... adding a
@@ -60,4 +69,4 @@ task :symlink => $submodules do
   end
 end
 
-task :default => $submodules + [ './rbenv/plugins/ruby-build' ]
+task :default => $submodules + [ './rbenv/plugins/ruby-build', './rbenv/plugins/rbenv-gemset' ]
