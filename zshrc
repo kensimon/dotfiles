@@ -88,3 +88,10 @@ setopt no_hist_verify
 # I don't really like zsh's autocorrect.
 setopt nocorrect
 setopt nocorrectall
+
+if [ -e /Applications/MacVim.app/Contents/MacOS/Vim ]
+then
+  export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
+else
+  export EDITOR='vim'
+fi
