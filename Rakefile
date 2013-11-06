@@ -16,6 +16,8 @@ $symlinks = {
   '.inputrc'      => 'inputrc',
   '.bash_profile' => 'bash_profile',
   '.irbrc'        => 'irbrc',
+  '.gitconfig'    => 'gitconfig',
+  '.gitignore'    => 'gitignore',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}

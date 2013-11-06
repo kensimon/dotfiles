@@ -1,0 +1,24 @@
+[user]
+    email = ninkendo@gmail.com
+    name = Ken Simon
+[push]
+    default = upstream
+[core]
+    excludesfile = ~/.gitignore
+    pager = less -F -X
+[bash]
+  showDirtyState = true
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[alias]
+  puff = pull --ff-only
+  co = checkout
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
