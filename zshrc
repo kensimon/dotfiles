@@ -61,6 +61,10 @@ fi
 # ohmyzsh's colors are ugly
 unset LSCOLORS
 
+# Make the tab title the same as the window title (I want to see the hostname
+# I'm on when I have lots of tabs, but the default just shows PWD.)
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%n@%m: %~"
+
 # do not bell on tab-completion
 #set bell-style none
 
