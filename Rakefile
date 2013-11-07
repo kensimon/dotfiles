@@ -1,4 +1,5 @@
 require 'pathname'
+require 'shell'
 
 # Submodules to keep synchronized
 $submodule_base_dirs = %w(
@@ -13,12 +14,14 @@ $symlinks = {
   # Values: path relative to this repo
   '.oh-my-zsh'    => 'oh-my-zsh',
   '.vimrc'        => 'vim/vimrc',
+  '.vim'          => 'vim',
   '.zshrc'        => 'zshrc',
   '.inputrc'      => 'inputrc',
   '.bash_profile' => 'bash_profile',
   '.irbrc'        => 'irbrc',
   '.gitconfig'    => 'gitconfig',
   '.gitignore'    => 'gitignore',
+  '.rbenv'        => 'rbenv',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
@@ -39,17 +42,12 @@ file './rbenv/plugins/rbenv-gemset' => ['./rbenv/.git'] do
   # We clone instead of use a submodule so it can be gitignored... adding a
   # submodule creates an issue where you have uncommitted changes in the rbenv
   # repo.
-  Dir.chdir('./rbenv')
-  sh "git clone git://github.com/jf/rbenv-gemset.git plugins/rbenv-gemset"
+  sh "git clone git://github.com/jf/rbenv-gemset.git rbenv/plugins/rbenv-gemset"
 end
 
 desc "Add ruby-build plugin to rbenv"
 file './rbenv/plugins/ruby-build' => ['./rbenv/.git'] do
-  # We clone instead of use a submodule so it can be gitignored... adding a
-  # submodule creates an issue where you have uncommitted changes in the rbenv
-  # repo.
-  Dir.chdir('./rbenv')
-  sh "git clone git://github.com/sstephenson/ruby-build.git plugins/ruby-build"
+  sh "git clone git://github.com/sstephenson/ruby-build.git rbenv/plugins/ruby-build"
 end
 
 task :update do
@@ -59,9 +57,6 @@ end
 
 desc "Create symlinks from this directory to the appropriate dotfiles in the home directory (currently: #{ENV['HOME']}"
 task :symlink => $submodules do
-  puts "(changing directory to #{ENV['HOME']})"
-  Dir.chdir(ENV['HOME'])
-
   $symlinks.each do |dotfile, path|
     this_directory   = File.expand_path('..', File.realdirpath(__FILE__))
 
