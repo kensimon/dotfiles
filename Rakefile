@@ -11,6 +11,7 @@ $submodule_base_dirs = %w(
 $symlinks = {
   # Keys: dotfile under ~
   # Values: path relative to this repo
+  '.oh-my-zsh'    => 'oh-my-zsh',
   '.vimrc'        => 'vim/vimrc',
   '.zshrc'        => 'zshrc',
   '.inputrc'      => 'inputrc',
@@ -68,7 +69,7 @@ task :symlink => $submodules do
     dotfile_pathname = Pathname.new(File.join(ENV['HOME'], dotfile))
     path_pathname    = Pathname.new(File.join(this_directory, path))
 
-    sh "ln -sf #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
+    sh "ln -sfh #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
   end
 end
 
