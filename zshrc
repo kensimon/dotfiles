@@ -103,3 +103,7 @@ setopt nocorrect
 setopt nocorrectall
 
 export EDITOR='vim'
+
+if [ -e /opt/boxen/env.sh ]; then
+  source /opt/boxen/env.sh
+fi
