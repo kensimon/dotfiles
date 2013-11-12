@@ -42,10 +42,15 @@ DISABLE_LS_COLORS="false"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-# Setup rbenv (needs to be done before oh-my-zsh for the prompt to work with
-# rbenv.)
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+if [ -e ~/.rbenv ]; then
+  # Setup rbenv (needs to be done before oh-my-zsh for the prompt to work with
+  # rbenv.)
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+elif [ -e /opt/boxen/rbenv ]; then
+  export PATH=/opt/boxen/rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
