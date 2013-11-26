@@ -52,6 +52,9 @@ elif [ -e ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+# Worst.  feature.  ever.
+DISABLE_AUTO_UPDATE="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # Place my theme in my dotfiles dir so I don't have to maintain a downstream
