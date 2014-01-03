@@ -110,6 +110,9 @@ setopt no_hist_verify
 setopt nocorrect
 setopt nocorrectall
 
+# Share history sucks too
+setopt no_share_history
+
 export EDITOR='vim'
 
 if [ -e /opt/boxen/env.sh ]; then
@@ -117,3 +120,6 @@ if [ -e /opt/boxen/env.sh ]; then
 fi
 
 export PATH=$PATH:/usr/local/sbin
+
+# Golang stuff
+export GOPATH=$HOME/dev/go
