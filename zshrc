@@ -113,6 +113,10 @@ setopt nocorrectall
 # Share history sucks too
 setopt no_share_history
 
+# And I have no idea why anybody would want zsh to just guess on an
+# unambiguation when you type a prefix.
+bindkey "^I" menu-expand-or-complete
+
 export EDITOR='vim'
 
 if [ -e /opt/boxen/env.sh ]; then
