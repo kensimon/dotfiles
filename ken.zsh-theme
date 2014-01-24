@@ -3,6 +3,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local rvm_ruby=''
+local git_branch=''
 if which rvm-prompt &> /dev/null; then
   rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
 else
@@ -10,7 +11,10 @@ else
     rvm_ruby='%{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%}'
   fi
 fi
-local git_branch='$(git_prompt_info)%{$reset_color%}'
+
+if which git &> /dev/null; then
+  git_branch='$(git_prompt_info)%{$reset_color%}'
+fi
 
 PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
 ╰─%B$%b "
