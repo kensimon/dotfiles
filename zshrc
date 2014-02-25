@@ -127,3 +127,7 @@ export PATH=$PATH:/usr/local/sbin
 
 # Golang stuff
 export GOPATH=$HOME/dev/go
+
+if [ -e "${HOME}/.docker_env" ]; then
+    source "${HOME}/.docker_env"
+fi
