@@ -115,7 +115,7 @@ setopt no_share_history
 
 # And I have no idea why anybody would want zsh to just guess on an
 # unambiguation when you type a prefix.
-bindkey "^I" menu-expand-or-complete
+bindkey "^I" expand-or-complete
 
 export EDITOR='vim'
 
