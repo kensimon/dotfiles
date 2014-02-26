@@ -65,6 +65,7 @@ source $HOME/.dotfiles/ken.zsh-theme
 if [ -d /Applications/MacVim.app/Contents/MacOS ]; then
     export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
 fi
+alias vi=vim
 
 # ohmyzsh's colors are ugly
 unset LSCOLORS
