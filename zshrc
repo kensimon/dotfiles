@@ -129,6 +129,7 @@ export PATH=$PATH:/usr/local/sbin
 # Golang stuff
 export GOPATH=$HOME/dev/go
 
-if [ -e "${HOME}/.docker_env" ]; then
-    source "${HOME}/.docker_env"
+# For system-specific stuff I don't want in my dotfiles repo
+if [ -e "${HOME}/.zshrc.local" ]; then
+    source "${HOME}/.zshrc.local"
 fi
