@@ -118,17 +118,19 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>BackgroundBlur</key>
-	<real>0.14999999999999999</real>
+	<real>0.0</real>
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OV05TV2hpdGVcTlNDb2xvclNwYWNlViRjbGFzc0cw
-	IDAuODUAEAOAAtIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09i
-	amVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIUF1kbG5wdYCJ
-	kZSdr7K3AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALk=
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NLMCAw
+	IDAgMC44NQAQAYAC0hAREhNaJGNsYXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5T
+	T2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2JucHJ3
+	gouTlp+xtLkAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAuw==
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<false/>
+	<key>Bell</key>
+	<true/>
 	<key>CursorColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -141,17 +143,17 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AoAAAAAAAAEBCAAoADWENvbnNvbGFz0hMUFRZaJGNsYXNzbmFtZVgkY2xhc3Nl
-	c1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRGhtUcm9vdIABCBEa
-	Iy0yNzxCS1JbYmlydHZ4gYaRmqGkrb/CxwAAAAAAAAEBAAAAAAAAABwAAAAAAAAAAAAA
-	AAAAAADJ
+	YXNzI0AqAAAAAAAAEBCAAoADXU1lbmxvLVJlZ3VsYXLSExQVFlokY2xhc3NuYW1lWCRj
+	bGFzc2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEaG1Ryb290
+	gAEIERojLTI3PEJLUltiaXJ0dniGi5afpqmyxMfMAAAAAAAAAQEAAAAAAAAAHAAAAAAA
+	AAAAAAAAAAAAAM4=
 	</data>
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<real>0.9926600302419355</real>
+	<integer>1</integer>
 	<key>FontWidthSpacing</key>
-	<real>0.9892578125</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.02</real>
 	<key>SelectionColor</key>
@@ -182,11 +184,17 @@
 	</data>
 	<key>UseBrightBold</key>
 	<false/>
+	<key>columnCount</key>
+	<integer>150</integer>
 	<key>name</key>
-	<string>Ken</string>
+	<string>TerminalAppSettings</string>
+	<key>rowCount</key>
+	<integer>80</integer>
 	<key>shellExitAction</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<true/>
 </dict>
 </plist>
