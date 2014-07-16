@@ -120,9 +120,10 @@ bindkey "^I" expand-or-complete
 
 export EDITOR='vim'
 
-if [ -e /opt/boxen/env.sh ]; then
-  source /opt/boxen/env.sh
-fi
+# Fuck boxen.
+#if [ -e /opt/boxen/env.sh ]; then
+#  source /opt/boxen/env.sh
+#fi
 
 export PATH=$PATH:/usr/local/sbin
 
