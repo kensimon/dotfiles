@@ -1,11 +1,11 @@
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
+    path = oh-my-zsh
+    url = https://github.com/robbyrussell/oh-my-zsh
     branch = master
 [submodule "vim"]
-	path = vim
-	url = https://github.com/ninkendo/vimconfig
+    path = vim
+    url = https://github.com/ninkendo/vimconfig
     branch = master
 [submodule "rbenv"]
-	path = rbenv
-	url = https://github.com/sstephenson/rbenv
+    path = rbenv
+    url = https://github.com/sstephenson/rbenv
