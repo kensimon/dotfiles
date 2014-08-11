@@ -12,16 +12,18 @@ $submodule_base_dirs = %w(
 $symlinks = {
   # Keys: dotfile under ~
   # Values: path relative to this repo
-  '.oh-my-zsh'    => 'oh-my-zsh',
-  '.vimrc'        => 'vim/vimrc',
-  '.vim'          => 'vim',
-  '.zshrc'        => 'zshrc',
-  '.inputrc'      => 'inputrc',
-  '.bash_profile' => 'bash_profile',
-  '.irbrc'        => 'irbrc',
-  '.gitconfig'    => 'gitconfig',
-  '.gitignore'    => 'gitignore',
-  '.rbenv'        => 'rbenv',
+  '.oh-my-zsh'           => 'oh-my-zsh',
+  '.vimrc'               => 'vim/vimrc',
+  '.vim'                 => 'vim',
+  '.zshrc'               => 'zshrc',
+  '.inputrc'             => 'inputrc',
+  '.bash_profile'        => 'bash_profile',
+  '.irbrc'               => 'irbrc',
+  '.gitconfig'           => 'gitconfig',
+  '.gitignore'           => 'gitignore',
+  '.rbenv'               => 'rbenv',
+  '.git-completion.bash' => 'git-completion.bash',
+  '.git-prompt.sh'       => 'git-prompt.sh',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}

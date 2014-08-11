@@ -131,6 +131,6 @@ export PATH=$PATH:/usr/local/sbin
 export GOPATH=$HOME/dev/go
 
 # For system-specific stuff I don't want in my dotfiles repo
-if [ -e "${HOME}/.zshrc.local" ]; then
-    source "${HOME}/.zshrc.local"
+if [ -e "${HOME}/.env.local" ]; then
+    source "${HOME}/.env.local"
 fi

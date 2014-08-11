@@ -33,10 +33,8 @@ bind '"\C-w": backward-kill-word'
 
 # Git completion
 export GIT_PS1_DESCRIBE_STYLE=branch
-X=~/.git-completion.bash
-[ -f "$X" ] && . $X
-X=~/.git-flow-completion.bash
-[ -f "$X" ] && . $X
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 
 #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;35m\]$(__git_ps1 " «%s»")\[\033[00m\]\$ '
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w$(__git_ps1 " \[\033[01;34m\]«\[\033[01;35m\]%s\[\033[01;34m\]»")\[\033[00m\]\$ '
@@ -64,4 +62,9 @@ fi
 if [ -d /usr/local/etc/bash_completion.d ]
 then
     source /usr/local/etc/bash_completion.d/*
+fi
+
+if [ -e ~/.env.local ]
+then
+    source ~/.env.local
 fi
