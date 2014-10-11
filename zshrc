@@ -129,6 +129,8 @@ export PATH=$PATH:/usr/local/sbin
 
 # Golang stuff
 export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
+
 
 # For system-specific stuff I don't want in my dotfiles repo
 if [ -e "${HOME}/.env.local" ]; then
