@@ -4,3 +4,5 @@ config/environments/ksimon.rb
 config/environments/ksimon.yml
 config/initializers/ksimon.rb
 config/mcollective/ksimon.cfg.erb
+.rbenv-gemsets
+.gems
