@@ -6,3 +6,4 @@ config/initializers/ksimon.rb
 config/mcollective/ksimon.cfg.erb
 .rbenv-gemsets
 .gems
+.AppleDouble
