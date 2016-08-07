@@ -139,3 +139,5 @@ fi
 # Don't save the "fg" command to history, using a trick where zsh doesn't
 # commit to history anything with a leading space.
 alias fg=' fg'
+
+alias npm-exec='PATH=$(npm bin):$PATH'
