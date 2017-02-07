@@ -28,4 +28,3 @@
   prune = true
 [url "ssh://git@github.com/"]
   insteadOf = git://github.com/
-  insteadOf = https://github.com/
