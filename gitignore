@@ -1,5 +1,6 @@
 .DS\_Store
 .*.sw?
+.sw?
 config/environments/ksimon.rb
 config/environments/ksimon.yml
 config/initializers/ksimon.rb
