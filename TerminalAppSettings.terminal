@@ -118,7 +118,7 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>BackgroundBlur</key>
-	<real>0.0</real>
+	<real>1</real>
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -130,6 +130,10 @@
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<false/>
 	<key>Bell</key>
+	<false/>
+	<key>BellBadge</key>
+	<false/>
+	<key>BellBounce</key>
 	<false/>
 	<key>CursorColor</key>
 	<data>
@@ -155,7 +159,7 @@
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
-	<real>2.02</real>
+	<real>2.0499999999999998</real>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -164,6 +168,10 @@
 	TlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSFBdZHBy
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
+	<key>ShowActiveProcessInTabTitle</key>
+	<false/>
+	<key>ShowActiveProcessInTitle</key>
+	<false/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
 	<key>TextBoldColor</key>
@@ -183,6 +191,8 @@
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
 	<key>UseBrightBold</key>
+	<false/>
+	<key>VisualBell</key>
 	<false/>
 	<key>columnCount</key>
 	<integer>150</integer>
