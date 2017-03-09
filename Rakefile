@@ -3,7 +3,6 @@ require 'shell'
 
 # Submodules to keep synchronized
 $submodule_base_dirs = %w(
-  ./vim
   ./oh-my-zsh
   ./rbenv
 )
