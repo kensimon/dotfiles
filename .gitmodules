@@ -4,7 +4,7 @@
     branch = master
 [submodule "vim"]
     path = vim
-    url = https://github.com/ninkendo/vimconfig
+    url = https://github.com/kensimon/vimconfig
     branch = master
 [submodule "rbenv"]
     path = rbenv
