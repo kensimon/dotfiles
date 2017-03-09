@@ -23,6 +23,7 @@ $symlinks = {
   '.rbenv'               => 'rbenv',
   '.git-completion.bash' => 'git-completion.bash',
   '.git-prompt.sh'       => 'git-prompt.sh',
+  '.kcfg.zsh'            => 'kcfg.zsh',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
