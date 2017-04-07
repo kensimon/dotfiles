@@ -146,3 +146,15 @@ source ~/.kcfg.zsh
 if which kubectl >/dev/null 2>&1; then
     source <(kubectl completion zsh)
 fi
+
+function cdggh() {
+    cd "${GOPATH}/src/github.com/${1}"
+}
+_cdggh() {
+  _files -W "${GOPATH}/src/github.com"
+}
+
+compdef _cdggh cdggh
+
+# No, I don't want to type "got" to mean "go test", "got" is universally a typo for "git".
+unalias got

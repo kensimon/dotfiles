@@ -16,7 +16,6 @@
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 [alias]
-  puff = pull --ff-only
   ff = merge --ff-only
   co = checkout
   fa = fetch --all
@@ -30,3 +29,5 @@
 [url "ssh://git@github.com/"]
   insteadOf = git://github.com/
   insteadOf = https://github.com/
+[pull]
+	ff = only
