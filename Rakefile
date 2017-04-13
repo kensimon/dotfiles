@@ -59,14 +59,13 @@ end
 
 desc "Create symlinks from this directory to the appropriate dotfiles in the home directory (currently: #{ENV['HOME']}"
 task :symlink => $submodules do
-  $symlinks.each do |dotfile, path|
-    this_directory   = File.expand_path('..', File.realdirpath(__FILE__))
+  this_directory   = File.expand_path('..', File.realdirpath(__FILE__))
+  homedir_pathname = Pathname.new(ENV['HOME'])
 
-    homedir_pathname = Pathname.new(ENV['HOME'])
+  $symlinks.each do |dotfile, path|
     dotfile_pathname = Pathname.new(File.join(ENV['HOME'], dotfile))
     path_pathname    = Pathname.new(File.join(this_directory, path))
-
-    sh "ln -sfn #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
+    sh "echo ln -sfn #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
   end
 end
 
