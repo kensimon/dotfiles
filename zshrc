@@ -61,11 +61,10 @@ source $ZSH/oh-my-zsh.sh
 # fork of oh-my-zsh.
 source $HOME/.dotfiles/ken.zsh-theme
 
-# Add macvim to path
-if [ -d /Applications/MacVim.app/Contents/MacOS ]; then
-    export PATH=/Applications/MacVim.app/Contents/MacOS:$PATH
-fi
 alias vi=vim
+if which vim >/dev/null 2>&1; then
+    alias vim=nvim
+fi
 
 # ohmyzsh's colors are ugly
 unset LSCOLORS
@@ -119,11 +118,6 @@ setopt no_share_history
 bindkey "^I" expand-or-complete
 
 export EDITOR='vim'
-
-# Fuck boxen.
-#if [ -e /opt/boxen/env.sh ]; then
-#  source /opt/boxen/env.sh
-#fi
 
 export PATH=$PATH:/usr/local/sbin
 

@@ -12,7 +12,7 @@ set lazyredraw
 
 call pathogen#infect()
 " work's env sets term to something dumb. Make vim not care.
-set term=xterm
+" set term=xterm
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
