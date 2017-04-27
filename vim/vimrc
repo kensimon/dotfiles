@@ -22,9 +22,6 @@ set nocompatible
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
 set nobackup
 set history=1000
 set ruler		" show the cursor position all the time
@@ -64,6 +61,7 @@ colorscheme mydefaults
 
 set autoindent		" always set autoindenting on
 set nohlsearch
+set noincsearch
 
 set tabstop=4
 set shiftwidth=4
