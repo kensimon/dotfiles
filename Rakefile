@@ -65,7 +65,7 @@ task :symlink => $submodules do
   $symlinks.each do |dotfile, path|
     dotfile_pathname = Pathname.new(File.join(ENV['HOME'], dotfile))
     path_pathname    = Pathname.new(File.join(this_directory, path))
-    sh "echo ln -sfn #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
+    sh "ln -sfn #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
   end
 end
 
