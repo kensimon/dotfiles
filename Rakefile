@@ -24,6 +24,7 @@ $symlinks = {
   '.git-completion.bash' => 'git-completion.bash',
   '.git-prompt.sh'       => 'git-prompt.sh',
   '.kcfg.zsh'            => 'kcfg.zsh',
+  '.config/nvim'         => 'vim',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
@@ -65,7 +66,8 @@ task :symlink => $submodules do
   $symlinks.each do |dotfile, path|
     dotfile_pathname = Pathname.new(File.join(ENV['HOME'], dotfile))
     path_pathname    = Pathname.new(File.join(this_directory, path))
-    sh "ln -sfn #{path_pathname.relative_path_from(homedir_pathname)} #{dotfile_pathname.to_s}"
+    sh "mkdir -p #{File.dirname(dotfile_pathname.to_s)}"
+    sh "ln -sfn #{path_pathname.relative_path_from(dotfile_pathname.parent)} #{dotfile_pathname.to_s}"
   end
 end
 
