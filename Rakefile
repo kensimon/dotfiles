@@ -24,6 +24,7 @@ $symlinks = {
   '.git-completion.bash' => 'git-completion.bash',
   '.git-prompt.sh'       => 'git-prompt.sh',
   '.kcfg.zsh'            => 'kcfg.zsh',
+  '.gopa.zsh'            => 'gopa.zsh',
   '.config/nvim'         => 'vim',
 }
 

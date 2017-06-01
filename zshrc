@@ -141,6 +141,8 @@ if which kubectl >/dev/null 2>&1; then
     source <(kubectl completion zsh)
 fi
 
+source ~/.gopa.zsh
+
 function cdggh() {
     cd "${GOPATH}/src/github.com/${1}"
 }
