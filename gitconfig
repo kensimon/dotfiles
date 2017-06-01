@@ -1,6 +1,6 @@
 [user]
-    email = ninkendo@gmail.com
-    name = Ken Simon
+	email = ninkendo@gmail.com
+	name = Ken Simon
 	signingkey = A50A582A34C6C0AB
 [push]
     default = upstream
