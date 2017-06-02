@@ -52,3 +52,7 @@ hi link Boolean        Constant
 " Stuff that for some reason I have to force highlighting for (hi! instead of
 " hi)
 hi! link Title          Special
+
+" Fix the popup menu color
+hi Pmenu ctermfg=15 ctermbg=238 guifg=#ffffff guibg=#444444
+hi PmenuSel ctermbg=15 ctermfg=0 guifg=#000000 guibg=#ffffff

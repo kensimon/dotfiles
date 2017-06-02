@@ -118,7 +118,7 @@ set guifont=Consolas:12
 "set transparency=10
 
 " Inspect color under cursor for color scheme debugging
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>^M
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
 let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
 if &term == "screen"
@@ -132,8 +132,8 @@ endif
 " The only correct unicode encoding.
 set encoding=utf-8
 
-" Allow mousing in terminals
-"set mouse=a
+" Don't do mouse support, seriously.
+set mouse=
 "map <ScrollWheelUp> <C-Y>
 "map <ScrollWheelDown> <C-E>
 
@@ -144,5 +144,18 @@ let g:bufExplorerFindActive=1
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]((\.git|\.hg|\.svn)|node_modules|vendor)$'
   \}
+let g:ctrlp_max_files=100000
 
 filetype plugin on
+
+map <Leader>gh :GoDoc<cr>
+let g:ycm_confirm_extra_conf=0
+let g:ycm_filetype_whitelist={'go': 1, 'cpp': 1, 'c': 1}
+let g:ycm_min_num_of_chars_for_completion=99
+set completeopt=preview,menuone
+
+" Don't trigger completion unless I ctrl+space
+" let g:ycm_auto_trigger=0
+
+" Let enter be used to confirm menu popup
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

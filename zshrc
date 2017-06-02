@@ -62,8 +62,10 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/ken.zsh-theme
 
 alias vi=vim
-if which vim >/dev/null 2>&1; then
+if which nvim >/dev/null 2>&1; then
     alias vim=nvim
+elif which mvim >/dev/null 2>&1; then
+    alias vim='mvim -v'
 fi
 
 # ohmyzsh's colors are ugly
