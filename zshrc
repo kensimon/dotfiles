@@ -62,10 +62,15 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/ken.zsh-theme
 
 alias vi=vim
+
 if which nvim >/dev/null 2>&1; then
     alias vim=nvim
+    export EDITOR=nvim
 elif which mvim >/dev/null 2>&1; then
     alias vim='mvim -v'
+    export EDITOR='mvim -v'
+else
+    export EDITOR='vim'
 fi
 
 # ohmyzsh's colors are ugly
@@ -118,8 +123,6 @@ setopt no_share_history
 # And I have no idea why anybody would want zsh to just guess on an
 # unambiguation when you type a prefix.
 bindkey "^I" expand-or-complete
-
-export EDITOR='vim'
 
 export PATH=$PATH:/usr/local/sbin
 
