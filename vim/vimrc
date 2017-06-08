@@ -155,10 +155,4 @@ map <Leader>gi :GoImports<cr>
 let g:ycm_confirm_extra_conf=0
 let g:ycm_filetype_whitelist={'go': 1, 'cpp': 1, 'c': 1}
 let g:ycm_min_num_of_chars_for_completion=99
-set completeopt=preview,menuone
-
-" Don't trigger completion unless I ctrl+space
-" let g:ycm_auto_trigger=0
-
-" Let enter be used to confirm menu popup
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+set completeopt=menuone
