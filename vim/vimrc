@@ -86,6 +86,7 @@ autocmd FileType ruby,puppet,yaml,javascript set sw=2 ts=2 et
 autocmd FileType make,jade set noet
 autocmd FileType go set ts=8 sw=8 noet
 
+
 " Clear treailing whitespace for some languages
 autocmd FileType ruby,puppet,coffee,go autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -114,7 +115,7 @@ end
 " Prevent the global gvimrc for macvim (/Applications/MacVim/.../gvimrc) from
 " setting colorscheme and overriding what we set here.
 let macvim_skip_colorscheme=1
-set guifont=Consolas:12
+set guifont=Menlo\ Regular:h13
 "set transparency=10
 
 " Inspect color under cursor for color scheme debugging
@@ -132,8 +133,12 @@ endif
 " The only correct unicode encoding.
 set encoding=utf-8
 
-" Don't do mouse support, seriously.
-set mouse=
+if has("gui_running")
+    set mouse=a
+else
+    " In cli I'd rather have my terminal emulator do things like selection
+    set mouse=
+endif
 "map <ScrollWheelUp> <C-Y>
 "map <ScrollWheelDown> <C-E>
 
@@ -157,3 +162,11 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_filetype_whitelist={'go': 1, 'cpp': 1, 'c': 1}
 let g:ycm_min_num_of_chars_for_completion=99
 set completeopt=menuone
+
+" I hate folding.
+set nofoldenable
+
+" disable bells in gvim/macvim
+"
+set t_vb=
+set visualbell
