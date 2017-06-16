@@ -159,3 +159,6 @@ compdef _cdggh cdggh
 
 # No, I don't want to type "got" to mean "go test", "got" is universally a typo for "git".
 unalias got
+
+alias json2yaml='ruby -rjson -ryaml -e "puts JSON.load(\$stdin.read.to_s).to_yaml"'
+alias yaml2json='ruby -rjson -ryaml -e "puts YAML.load(\$stdin.read.to_s).to_json"'
