@@ -40,17 +40,7 @@ DISABLE_LS_COLORS="false"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git go)
-
-# Setup rbenv (needs to be done before oh-my-zsh for the prompt to work with
-# rbenv.)
-if [ -e ~/.rbenv ]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-elif [ -e /opt/boxen/rbenv ]; then
-  export PATH=/opt/boxen/rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-fi
+#plugins=(git go)
 
 # Worst.  feature.  ever.
 DISABLE_AUTO_UPDATE="true"
@@ -142,10 +132,7 @@ alias fg=' fg'
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 source ~/.kcfg.zsh
-if which kubectl >/dev/null 2>&1; then
-    source <(kubectl completion zsh)
-fi
-
+source ~/.kubectl.zsh
 source ~/.gopa.zsh
 
 function cdggh() {
@@ -156,9 +143,6 @@ _cdggh() {
 }
 
 compdef _cdggh cdggh
-
-# No, I don't want to type "got" to mean "go test", "got" is universally a typo for "git".
-unalias got
 
 alias json2yaml='ruby -rjson -ryaml -e "puts JSON.load(\$stdin.read.to_s).to_yaml"'
 alias yaml2json='ruby -rjson -ryaml -e "puts YAML.load(\$stdin.read.to_s).to_json"'

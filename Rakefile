@@ -26,6 +26,7 @@ $symlinks = {
   '.kcfg.zsh'            => 'kcfg.zsh',
   '.gopa.zsh'            => 'gopa.zsh',
   '.config/nvim'         => 'vim',
+  '.kubectl.zsh'         => 'kubectl.zsh',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
