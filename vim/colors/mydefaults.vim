@@ -1,4 +1,4 @@
-hi Comment      term=NONE       cterm=NONE      ctermfg=darkgrey     ctermbg=NONE gui=NONE      guifg=#7f7f7f guibg=NONE
+hi Comment      term=NONE       cterm=NONE      ctermfg=22    ctermbg=NONE gui=NONE      guifg=#7f7f7f guibg=NONE
 hi Constant     term=NONE       cterm=NONE      ctermfg=Magenta      ctermbg=NONE gui=NONE      guifg=#FB79FB guibg=NONE
 hi String       term=NONE       cterm=NONE      ctermfg=Magenta      ctermbg=NONE gui=NONE      guifg=#FB79FB guibg=NONE
 hi Special      term=bold       cterm=NONE      ctermfg=LightRed     ctermbg=NONE gui=bold      guifg=#FFDFDF guibg=NONE
