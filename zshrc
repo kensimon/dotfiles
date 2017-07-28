@@ -116,6 +116,13 @@ bindkey "^I" expand-or-complete
 
 export PATH=$PATH:/usr/local/sbin
 
+# Setup rbenv (needs to be done before oh-my-zsh for the prompt to work with
+# rbenv.)
+if [ -e ~/.rbenv ]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
 # Golang stuff
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
