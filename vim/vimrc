@@ -79,6 +79,7 @@ au BufNewFile,BufRead *.coffee.erb set filetype=coffee
 au BufNewFile,BufRead *.rabl set filetype=ruby
 au BufNewFile,BufRead Capfile set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead Podfile set filetype=ruby
 au BufNewFile,BufRead *.rb set filetype=ruby
 au BufNewFile,BufRead *.vp,*.fp,*.gp,*.vs,*.fs,*.gs,*.tcs,*.tes,*.vert,*.frag,*.geom,*.tess,*.shd,*.gls,*.glsl set ft=glsl330
 
