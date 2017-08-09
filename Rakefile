@@ -18,8 +18,9 @@ $symlinks = {
   '.inputrc'             => 'inputrc',
   '.bash_profile'        => 'bash_profile',
   '.irbrc'               => 'irbrc',
-  '.gitconfig'           => 'gitconfig',
-  '.gitignore'           => 'gitignore',
+  '.gitconfig'           => 'git/gitconfig',
+  '.gitignore'           => 'git/gitignore',
+  '.git'                 => 'git',
   '.rbenv'               => 'rbenv',
   '.git-completion.bash' => 'git-completion.bash',
   '.git-prompt.sh'       => 'git-prompt.sh',
@@ -68,7 +69,10 @@ task :symlink => $submodules do
   $symlinks.each do |dotfile, path|
     dotfile_pathname = Pathname.new(File.join(ENV['HOME'], dotfile))
     path_pathname    = Pathname.new(File.join(this_directory, path))
-    sh "mkdir -p #{File.dirname(dotfile_pathname.to_s)}"
+    if !File.exists?(File.dirname(dotfile_pathname.to_s))
+      sh "mkdir -p #{File.dirname(dotfile_pathname.to_s)}"
+    end
+
     sh "ln -sfn #{path_pathname.relative_path_from(dotfile_pathname.parent)} #{dotfile_pathname.to_s}"
   end
 end
