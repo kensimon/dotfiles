@@ -55,5 +55,6 @@ crashlytics-build.properties
 fabric.properties
 
 /.ken-local/
+/.ken-nogitbranch
 
 .*.icloud

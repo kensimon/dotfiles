@@ -5,7 +5,7 @@ local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local git_branch=''
 
 if which git &> /dev/null; then
-  git_branch='$(git_prompt_info)%{$reset_color%}'
+  git_branch='$(test -e ./.ken-nogitbranch || git_prompt_info)%{$reset_color%}'
 fi
 
 PROMPT="╭─${user_host} ${current_dir} ${git_branch}
