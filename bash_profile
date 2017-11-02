@@ -68,3 +68,8 @@ if [ -e ~/.env.local ]
 then
     source ~/.env.local
 fi
+
+if [ -e ~/.bash.local ]
+then
+    source ~/.bash.local
+fi
