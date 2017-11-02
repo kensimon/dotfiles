@@ -28,6 +28,8 @@ $symlinks = {
   '.gopa.zsh'            => 'gopa.zsh',
   '.config/nvim'         => 'vim',
   '.kubectl.zsh'         => 'kubectl.zsh',
+  '.ssh/rc'              => 'ssh/rc',
+  '.tmux.conf'           => 'tmux.conf',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
