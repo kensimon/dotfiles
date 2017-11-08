@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AboutToPasteTabsWithCancel</key>
+	<true/>
+	<key>AboutToPasteTabsWithCancel_selection</key>
+	<integer>0</integer>
 	<key>AddNewTabAtEndOfTabs</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -471,6 +475,13 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xd-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
 			<key>Action</key>
@@ -606,15 +617,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>877 260 658 506 0 0 1680 1027 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
-	<string>330 956 735 382 0 0 2560 1417 </string>
+	<string>861 1395 735 382 0 0 3200 1777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>211 571 796 473 0 0 2880 1597 </string>
+	<string>243 706 958 451 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>97 145 1210 1234 0 0 2560 1417 </string>
+	<string>126 287 1874 1490 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>284 272 1210 1234 0 0 2880 1597 </string>
+	<string>907 424 1210 1234 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>951 131 1210 1234 0 0 2560 1417 </string>
+	<string>16 127 1210 1234 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>331 80 1210 947 0 0 1680 1027 </string>
 	<key>NeverWarnAboutMeta</key>
@@ -1974,12 +1985,23 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>A8FE3A5E-DBA8-48AC-8DE4-869E5616F8DC</string>
+	<key>NoSyncLastTipTime</key>
+	<real>531786224.91778398</real>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>531274804.83094198</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+	</array>
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
@@ -2028,7 +2050,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-02T01:09:30Z</date>
+	<date>2017-11-06T22:14:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
