@@ -3,8 +3,8 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local git_branch=''
-local rbenv_version='${RBENV_VERSION:+" %{$fg[red]%}‹rbenv:${RBENV_VERSION}›%{$reset_color%}"}'
-local conda_env='${CONDA_DEFAULT_ENV:+" %{$fg[red]%}‹conda:${CONDA_DEFAULT_ENV}›%{$reset_color%}"}'
+local rbenv_version='${RBENV_VERSION:+" %{$fg[red]%}‹💎 ${RBENV_VERSION}›%{$reset_color%}"}'
+local conda_env='${CONDA_DEFAULT_ENV:+" %{$fg[red]%}‹🐍 ${CONDA_DEFAULT_ENV}›%{$reset_color%}"}'
 
 if which git &> /dev/null; then
   git_branch=' $(git_prompt_info)'
