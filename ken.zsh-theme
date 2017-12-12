@@ -7,7 +7,7 @@ local rbenv_version='${RBENV_VERSION:+" %{$fg[red]%}‹rbenv:${RBENV_VERSION}›
 local conda_env='${CONDA_DEFAULT_ENV:+" %{$fg[red]%}‹conda:${CONDA_DEFAULT_ENV}›%{$reset_color%}"}'
 
 if which git &> /dev/null; then
-  git_branch=' $(test -e "$(git rev-parse --show-toplevel 2>/dev/null || echo '.')"/.ken-nogitbranch || git_prompt_info)%{$reset_color%}'
+  git_branch=' $(git_prompt_info)'
 fi
 
 PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${git_branch}
