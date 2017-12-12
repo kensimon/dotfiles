@@ -47,10 +47,6 @@ DISABLE_AUTO_UPDATE="true"
 
 source $ZSH/oh-my-zsh.sh
 
-# Place my theme in my dotfiles dir so I don't have to maintain a downstream
-# fork of oh-my-zsh.
-source $HOME/.dotfiles/ken.zsh-theme
-
 alias vi=vim
 
 if which nvim >/dev/null 2>&1; then
@@ -131,6 +127,10 @@ export PATH=$PATH:$GOPATH/bin
 if [ -e "${HOME}/.env.local" ]; then
     source "${HOME}/.env.local"
 fi
+
+# Place my theme in my dotfiles dir so I don't have to maintain a downstream
+# fork of oh-my-zsh.
+source $HOME/.dotfiles/ken.zsh-theme
 
 # Don't save the "fg" command to history, using a trick where zsh doesn't
 # commit to history anything with a leading space.
