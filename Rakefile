@@ -58,6 +58,11 @@ file './rbenv/plugins/ruby-build' => ['./rbenv/.git'] do
   sh "git clone git://github.com/sstephenson/ruby-build.git rbenv/plugins/ruby-build"
 end
 
+desc "Add rbenv-readline plugin to rbenv"
+file './rbenv/plugins/rbenv-readline' => ['./rbenv/.git'] do
+  sh "git clone git://github.com/tpope/rbenv-readline.git rbenv/plugins/rbenv-readline"
+end
+
 task :update do
   sh 'git submodule foreach git checkout master'
   sh 'git submodule foreach git pull --rebase'
@@ -79,4 +84,4 @@ task :symlink => $submodules do
   end
 end
 
-task :default => $submodules + [ './rbenv/plugins/ruby-build', './rbenv/plugins/rbenv-gemset' ]
+task :default => $submodules + [ './rbenv/plugins/ruby-build', './rbenv/plugins/rbenv-gemset', './rbenv/plugins/rbenv-readline' ]
