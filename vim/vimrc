@@ -67,6 +67,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+set cino=N-s " don't indent namespaces in C++
 
 filetype indent on
 
