@@ -73,3 +73,5 @@ if [ -e ~/.bash.local ]
 then
     source ~/.bash.local
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
