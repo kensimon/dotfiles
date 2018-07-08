@@ -577,8 +577,6 @@
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles/itermsettings</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -614,20 +612,24 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>877 260 658 506 0 0 1680 1027 </string>
-	<key>NSWindow Frame ProfilesPanel</key>
-	<string>861 1395 735 382 0 0 3200 1777 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>972 932 616 174 0 0 2560 1417 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>970 769 620 392 0 0 2560 1417 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 2880 1597 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>243 706 958 451 0 0 3200 1777 </string>
+	<string>388 201 1018 447 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>126 287 1874 1490 0 0 3200 1777 </string>
+	<string>881 141 1210 1234 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>907 424 1210 1234 0 0 3200 1777 </string>
+	<string>1641 0 898 674 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>16 127 1210 1234 0 0 3200 1777 </string>
+	<string>364 126 1210 1234 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>331 80 1210 947 0 0 1680 1027 </string>
+	<string>385 135 1210 1211 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>406 112 1210 1211 0 0 2560 1417 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1984,24 +1986,15 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>A8FE3A5E-DBA8-48AC-8DE4-869E5616F8DC</string>
-	<key>NoSyncLastTipTime</key>
-	<real>531786224.91778398</real>
+	<string>3F771F23-B397-4B91-B9E1-ECC39CEFFF6F</string>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
-	<true/>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>531274804.83094198</real>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>000</string>
-		<string>0000</string>
-	</array>
+	<real>527359981.63343698</real>
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
@@ -2041,16 +2034,18 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/ken/.dotfiles/itermsettings</string>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=2</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=55</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-06T22:14:49Z</date>
+	<date>2018-07-04T06:24:47Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2061,6 +2056,8 @@
 	<integer>1</integer>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseMetal</key>
+	<false/>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WordCharacters</key>
@@ -2068,6 +2065,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.4</string>
+	<string>3.1.7</string>
 </dict>
 </plist>
