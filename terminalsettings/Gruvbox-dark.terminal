@@ -157,6 +157,12 @@
 	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>Bell</key>
+	<false/>
+	<key>BellBadge</key>
+	<false/>
+	<key>BellBounce</key>
+	<false/>
 	<key>BellBounceCritical</key>
 	<false/>
 	<key>BlinkText</key>
@@ -239,6 +245,8 @@
 	<key>UseBoldFonts</key>
 	<true/>
 	<key>UseBrightBold</key>
+	<false/>
+	<key>VisualBell</key>
 	<false/>
 	<key>columnCount</key>
 	<integer>150</integer>
