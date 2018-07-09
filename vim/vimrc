@@ -57,7 +57,7 @@ set complete=.,w,b,i,t,u
 set t_Co=256
 syntax on
 set bg=dark
-colorscheme solarized
+colorscheme gruvbox
 
 set autoindent		" always set autoindenting on
 set nohlsearch
