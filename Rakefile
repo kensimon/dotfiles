@@ -30,6 +30,7 @@ $symlinks = {
   '.kubectl.zsh'         => 'kubectl.zsh',
   '.ssh/rc'              => 'ssh/rc',
   '.tmux.conf'           => 'tmux.conf',
+  '.ideavimrc'           => 'ideavimrc',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
