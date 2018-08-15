@@ -57,6 +57,7 @@ set complete=.,w,b,i,t,u
 set t_Co=256
 syntax on
 set bg=dark
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
 set autoindent		" always set autoindenting on
