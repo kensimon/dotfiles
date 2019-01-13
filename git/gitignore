@@ -57,3 +57,4 @@ fabric.properties
 /.ken-local/
 
 .*.icloud
+xcuserdata/
