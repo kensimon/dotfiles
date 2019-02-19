@@ -149,6 +149,10 @@ _cdggh() {
   _files -W "${GOPATH}/src/github.com"
 }
 
+function waitandsaywhendone() {
+    while :; do pgrep -qf "${1}" || (say "Done" && exit 1) || break; sleep 1; done
+}
+
 compdef _cdggh cdggh
 
 alias json2yaml='ruby -rjson -ryaml -e "puts JSON.load(\$stdin.read.to_s).to_yaml"'
