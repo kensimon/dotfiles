@@ -58,3 +58,5 @@ fabric.properties
 
 .*.icloud
 xcuserdata/
+
+tscommand-*.tmp.txt

@@ -158,6 +158,7 @@ compdef _cdggh cdggh
 alias json2yaml='ruby -rjson -ryaml -e "puts JSON.load(\$stdin.read.to_s).to_yaml"'
 alias yaml2json='ruby -rjson -ryaml -e "puts YAML.load(\$stdin.read.to_s).to_json"'
 alias datestamp='date "+%Y%m%d%H%M"'
+alias lcase='tr "A-Z" "a-z"'
 
 # Rust stuff
 export PATH="${PATH}:${HOME}/.cargo/bin"
