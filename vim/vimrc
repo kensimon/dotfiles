@@ -54,10 +54,12 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set complete=.,w,b,i,t,u
 
 
-set t_Co=256
+set termguicolors "omg
+"set t_Co=256
 syntax on
-set bg=dark
+set bg=light
 let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
 
 set autoindent		" always set autoindenting on
