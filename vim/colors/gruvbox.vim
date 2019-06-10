@@ -98,6 +98,10 @@ let s:gb.dark4_256   = ['#7c6f64', 243]     " 124-111-100
 let s:gb.gray_245    = ['#928374', 245]     " 146-131-116
 let s:gb.gray_244    = ['#928374', 244]     " 146-131-116
 
+" (KEN: just use the terminal bgcolor which is the correct value)
+"let s:gb.light0_hard = ['#f9f5d7', 230]     " 249-245-215
+"let s:gb.light0      = ['#fbf1c7', 229]     " 253-244-193
+"let s:gb.light0_soft = ['#f2e5bc', 228]     " 242-229-188
 let s:gb.light0_hard = ['#f9f5d7', 230]     " 249-245-215
 let s:gb.light0      = ['#fbf1c7', 0]     " 253-244-193 (KEN: just use the terminal bgcolor which is the correct value)
 let s:gb.light0_soft = ['#f2e5bc', 228]     " 242-229-188

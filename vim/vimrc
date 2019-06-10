@@ -54,12 +54,13 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set complete=.,w,b,i,t,u
 
 
-set termguicolors "omg
-"set t_Co=256
+" Have to wait for Terminal.app to support true color for this:
+" set termguicolors
+set t_Co=256
 syntax on
-set bg=light
+set bg=dark
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+"let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
 
 set autoindent		" always set autoindenting on
