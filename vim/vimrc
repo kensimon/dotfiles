@@ -179,3 +179,10 @@ set visualbell
 
 " Rust stuff
 let g:rustfmt_autosave = 1
+
+
+" Prevent ObjC indentation from trying to align colons (it's bad at it.)
+function GetObjCIndent()
+    let theIndent = cindent(v:lnum)
+    return theIndent
+endfunction
