@@ -62,3 +62,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
+[submodule "vim/bundle/swift.vim"]
+	path = vim/bundle/swift.vim
+	url = https://github.com/keith/swift.vim
