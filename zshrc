@@ -164,3 +164,4 @@ alias lcase='tr "A-Z" "a-z"'
 
 # Rust stuff
 export PATH="${PATH}:${HOME}/.cargo/bin"
+DISABLE_AUTO_TITLE=true
