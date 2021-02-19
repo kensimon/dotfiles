@@ -152,7 +152,7 @@ _cdggh() {
 }
 
 function waitandsaywhendone() {
-    while :; do pgrep -qf "${1}" || (say "Done" && exit 1) || break; sleep 1; done
+    while :; do pgrep -qf "${1}" || { say "It's done" && break }; sleep 1; done
 }
 
 compdef _cdggh cdggh
