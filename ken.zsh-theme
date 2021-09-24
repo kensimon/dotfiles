@@ -5,12 +5,13 @@ local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local git_branch=''
 local rbenv_version='${RBENV_VERSION:+" %{$fg[red]%}‹💎 ${RBENV_VERSION}›%{$reset_color%}"}'
 local conda_env='${CONDA_DEFAULT_ENV:+" %{$fg[red]%}‹🐍 ${CONDA_DEFAULT_ENV}›%{$reset_color%}"}'
+local ios_sdk='${IOS_SDK_VERSION:+" %{$fg[red]%}‹📱${IOS_SDK_VERSION}›%{$reset_color%}"}'
 
 if which git &> /dev/null; then
   git_branch=' $(git_prompt_info)'
 fi
 
-PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${git_branch}
+PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${ios_sdk}${git_branch}
 ╰─%B$%b "
 RPS1="${return_code}"
 
