@@ -58,10 +58,12 @@ set complete=.,w,b,i,t,u
 " set termguicolors
 set t_Co=256
 syntax on
-set bg=dark
+set bg=light
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
+" Don't draw a bgcolor (let the terminal choose it)
+highlight Normal ctermbg=none
 
 set autoindent		" always set autoindenting on
 set nohlsearch
