@@ -107,6 +107,8 @@ setopt nocorrectall
 setopt no_share_history
 # But share the history (commit commands before they're run)
 setopt inc_append_history
+# big history
+HISTSIZE=5000000
 
 # And I have no idea why anybody would want zsh to just guess on an
 # unambiguation when you type a prefix.
