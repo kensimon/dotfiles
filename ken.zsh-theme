@@ -1,6 +1,12 @@
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
+if [[ whoami == "root" ]]
+then
+    local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
+else
+    local user_host='%{$terminfo[bold]$fg[red]%}%n@%m%{$reset_color%}'
+fi
+
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local git_branch=''
 local rbenv_version='${RBENV_VERSION:+" %{$fg[red]%}‹💎 ${RBENV_VERSION}›%{$reset_color%}"}'

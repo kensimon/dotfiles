@@ -51,17 +51,17 @@ file './rbenv/plugins/rbenv-gemset' => ['./rbenv/.git'] do
   # We clone instead of use a submodule so it can be gitignored... adding a
   # submodule creates an issue where you have uncommitted changes in the rbenv
   # repo.
-  sh "git clone git://github.com/jf/rbenv-gemset.git rbenv/plugins/rbenv-gemset"
+  sh "git clone https://github.com/jf/rbenv-gemset.git rbenv/plugins/rbenv-gemset"
 end
 
 desc "Add ruby-build plugin to rbenv"
 file './rbenv/plugins/ruby-build' => ['./rbenv/.git'] do
-  sh "git clone git://github.com/sstephenson/ruby-build.git rbenv/plugins/ruby-build"
+  sh "git clone https://github.com/sstephenson/ruby-build.git rbenv/plugins/ruby-build"
 end
 
 desc "Add rbenv-readline plugin to rbenv"
 file './rbenv/plugins/rbenv-readline' => ['./rbenv/.git'] do
-  sh "git clone git://github.com/tpope/rbenv-readline.git rbenv/plugins/rbenv-readline"
+  sh "git clone https://github.com/tpope/rbenv-readline.git rbenv/plugins/rbenv-readline"
 end
 
 task :update do
