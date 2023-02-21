@@ -131,13 +131,14 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
 if &term == "screen"
-  set t_ts=^[k
-  set t_fs=^[\
+  set t_ts=k
+  set t_fs=\
 endif
 if &term == "screen" || &term == "xterm"
   set title
 endif
 
+auto VimLeave * :set t_ts=k.\
 " The only correct unicode encoding.
 set encoding=utf-8
 
