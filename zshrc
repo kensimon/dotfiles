@@ -45,7 +45,18 @@ plugins=(git docker)
 # Worst.  feature.  ever.
 DISABLE_AUTO_UPDATE="true"
 
+# Set history options both before and after sourcing oh-my-zsh, because omzsh will overwrite it.
+setopt no_share_history
+setopt inc_append_history
+export HISTSIZE=999999999
+export SAVEHIST=999999999
+
 source $ZSH/oh-my-zsh.sh
+
+setopt no_share_history
+setopt inc_append_history
+export HISTSIZE=999999999
+export SAVEHIST=999999999
 
 alias vi=vim
 
@@ -102,13 +113,6 @@ setopt no_hist_verify
 # I don't really like zsh's autocorrect.
 setopt nocorrect
 setopt nocorrectall
-
-# Share history sucks too
-setopt no_share_history
-# But share the history (commit commands before they're run)
-setopt inc_append_history
-# big history
-HISTSIZE=5000000
 
 # And I have no idea why anybody would want zsh to just guess on an
 # unambiguation when you type a prefix.
