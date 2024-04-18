@@ -58,7 +58,7 @@ set complete=.,w,b,i,t,u
 " set termguicolors
 set t_Co=256
 syntax on
-set bg=light
+set bg=dark
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
