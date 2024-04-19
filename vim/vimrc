@@ -162,11 +162,11 @@ let g:ctrlp_max_files=100000
 
 filetype plugin on
 
-map <Leader>gh :GoDoc<cr>
-map <Leader>gb :GoBuild<cr>
-map <Leader>gt :GoTest<cr>
-map <Leader>gi :GoImports<cr>
-map <Leader>gr :GoRename<cr>
+"map <Leader>gh :GoDoc<cr>
+"map <Leader>gb :GoBuild<cr>
+"map <Leader>gt :GoTest<cr>
+"map <Leader>gi :GoImports<cr>
+"map <Leader>gr :GoRename<cr>
 let g:ycm_confirm_extra_conf=0
 let g:ycm_filetype_whitelist={'go': 1, 'cpp': 1, 'c': 1}
 let g:ycm_min_num_of_chars_for_completion=99
@@ -189,3 +189,14 @@ function GetObjCIndent()
     let theIndent = cindent(v:lnum)
     return theIndent
 endfunction
+
+"if executable('sourcekit-lsp')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'sourcekit-lsp',
+"        \ 'cmd': {server_info->['sourcekit-lsp']},
+"        \ 'whitelist': ['swift'],
+"        \ })
+"endif
+"
+"autocmd FileType swift setlocal omnifunc=lsp#complete
+"inoremap <C-@> <C-x><C-o>
