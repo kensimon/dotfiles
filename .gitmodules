@@ -68,3 +68,9 @@
 [submodule "vim/bundle/plantuml-syntax"]
 	path = vim/bundle/plantuml-syntax
 	url = https://github.com/aklt/plantuml-syntax
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "vim/bundle/coc.nvim"]
+	path = vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim

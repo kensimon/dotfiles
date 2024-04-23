@@ -31,6 +31,7 @@ $symlinks = {
   '.ssh/rc'              => 'ssh/rc',
   '.tmux.conf'           => 'tmux.conf',
   '.ideavimrc'           => 'ideavimrc',
+  '.tmux'                => 'tmux',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
