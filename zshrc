@@ -174,3 +174,9 @@ if [[ -z "${TMUX}" ]]
 then
     DISABLE_AUTO_TITLE=true
 fi
+
+if [[ "$(uname)" == "Linux" ]]
+then
+    alias pbpaste='xclip -selection c -o'
+    alias pbcopy='xclip -selection c -i'
+fi
