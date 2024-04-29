@@ -74,9 +74,9 @@ then
     source ~/.bash.local
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 if [ -f /opt/brew/etc/bash_completion ]; then
    . /opt/brew/etc/bash_completion
    echo "Did the bash completion source"
 fi
+. "$HOME/.cargo/env"
