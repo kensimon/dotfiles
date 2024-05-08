@@ -112,7 +112,6 @@ end
 " Prevent the global gvimrc for macvim (/Applications/MacVim/.../gvimrc) from
 " setting colorscheme and overriding what we set here.
 let macvim_skip_colorscheme=1
-set guifont=Menlo\ Regular:h13
 "set transparency=10
 
 " Inspect color under cursor for color scheme debugging
