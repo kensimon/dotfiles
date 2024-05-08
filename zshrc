@@ -148,6 +148,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 
 source ~/.kcfg.zsh
 source ~/.kubectl.zsh
+source ~/.minikube.zsh
 source ~/.gopa.zsh
 
 function cdggh() {
