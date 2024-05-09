@@ -60,3 +60,4 @@ fabric.properties
 xcuserdata/
 
 tscommand-*.tmp.txt
+/.rgignore
