@@ -47,7 +47,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 " set termguicolors
 set t_Co=256
 syntax on
-set bg=dark
+set bg=light
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
@@ -132,6 +132,18 @@ set encoding=utf-8
 
 if has("gui_running")
     set mouse=a
+    set guioptions-=T
+
+    " Simple copy/paste (visual mode only)
+    vmap <C-S-C> "+y
+    vmap <C-C> "+y
+
+    " ctrl+shift+v pastes in any mode
+    map <C-S-V> "+P
+    imap <C-S-V> <C-r><C-o>+
+
+    " ctrl+v pastes in insert mode only (else conflicts with block select)
+    imap <C-V> <C-r><C-o>+
 else
     " In cli I'd rather have my terminal emulator do things like selection
     set mouse=
