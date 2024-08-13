@@ -1,2 +1,6 @@
 set visualbell
 set noerrorbells
+
+nnoremap ]g :action GotoNextError<CR>
+nnoremap [g :action GotoPreviousError<CR>
+map gh <Action>(ShowErrorDescription)
