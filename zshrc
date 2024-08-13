@@ -158,10 +158,6 @@ _cdggh() {
   _files -W "${GOPATH}/src/github.com"
 }
 
-function waitandsaywhendone() {
-    while :; do pgrep -qf "${1}" || { say "It's done" && break }; sleep 1; done
-}
-
 compdef _cdggh cdggh
 
 alias json2yaml='ruby -rjson -ryaml -e "puts JSON.load(\$stdin.read.to_s).to_yaml"'
@@ -180,4 +176,9 @@ if [[ "$(uname)" == "Linux" ]]
 then
     alias pbpaste='xclip -selection c -o'
     alias pbcopy='xclip -selection c -i'
+    alias say='spd-say'
 fi
+
+function waitandsaywhendone() {
+    while :; do pgrep -f "${1}" >/dev/null 2>&1 || { say "It's done" && break }; sleep 1; done
+}
