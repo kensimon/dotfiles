@@ -38,4 +38,13 @@ config.keys = {
 
 config.font = wezterm.font('JetBrains Mono')
 
+-- Additional config not checked into git (ssh_domains, etc)
+local local_config = os.getenv("HOME") .. "/.config/wezterm/local.lua"
+local f = io.open(local_config, "r")
+if f ~= nil and io.close(f) then
+    dofile(local_config)
+    hydrate_local(config)
+end
+
+
 return config
