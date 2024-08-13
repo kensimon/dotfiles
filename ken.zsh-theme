@@ -13,11 +13,16 @@ local rbenv_version='${RBENV_VERSION:+" %{$fg[red]%}‹💎 ${RBENV_VERSION}›%
 local conda_env='${CONDA_DEFAULT_ENV:+" %{$fg[red]%}‹🐍 ${CONDA_DEFAULT_ENV}›%{$reset_color%}"}'
 local ios_sdk='${IOS_SDK_VERSION:+" %{$fg[red]%}‹📱${IOS_SDK_VERSION}›%{$reset_color%}"}'
 
+if which rustc &>/dev/null; then
+    local rust_version_number="$(rustc --version | awk '{print $2}')"
+    local rust_version=' %{$fg[red]%}‹🦀 ${rust_version_number}›%{$reset_color%}'
+fi
+
 if which git &> /dev/null; then
   git_branch=' $(git_prompt_info)'
 fi
 
-PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${ios_sdk}${git_branch}
+PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${ios_sdk}${rust_version}${git_branch}
 ╰─%B$%b "
 RPS1="${return_code}"
 
