@@ -33,6 +33,7 @@ $symlinks = {
   '.ideavimrc'           => 'ideavimrc',
   '.tmux'                => 'tmux',
   '.minikube.zsh'        => 'minikube.zsh',
+  '.config/wezterm'      => 'wezterm',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
