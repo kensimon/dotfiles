@@ -73,9 +73,8 @@ fi
 # ohmyzsh's colors are ugly
 unset LSCOLORS
 
-# Make the tab title the same as the window title (I want to see the hostname
-# I'm on when I have lots of tabs, but the default just shows PWD.)
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%n@%m: %~"
+# Only show path in tab title
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%~"
 
 # do not bell on tab-completion
 #set bell-style none
@@ -167,10 +166,6 @@ alias lcase='tr "A-Z" "a-z"'
 
 # Rust stuff
 export PATH="${PATH}:${HOME}/.cargo/bin"
-if [[ -z "${TMUX}" ]]
-then
-    DISABLE_AUTO_TITLE=true
-fi
 
 if [[ "$(uname)" == "Linux" ]]
 then
