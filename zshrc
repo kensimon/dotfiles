@@ -180,6 +180,11 @@ function waitandsaywhendone() {
 
 if [[ "$(uname)" == "OpenBSD" ]]
 then
-    # dumb defaults.
+    # Pager defaults suck
+    LESS=FRXc
+    # inputrc doesn't seem to catch these
+    bindkey "^[[1;3C" forward-word
+    bindkey "^[[1;3D" backward-word
+    # Doesn't seem to recognize wezterm?
     export TERM=xterm
 fi
