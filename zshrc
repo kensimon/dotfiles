@@ -48,15 +48,15 @@ DISABLE_AUTO_UPDATE="true"
 # Set history options both before and after sourcing oh-my-zsh, because omzsh will overwrite it.
 setopt no_share_history
 setopt inc_append_history
-export HISTSIZE=999999999
-export SAVEHIST=999999999
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 source $ZSH/oh-my-zsh.sh
 
 setopt no_share_history
 setopt inc_append_history
-export HISTSIZE=999999999
-export SAVEHIST=999999999
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 alias vi=vim
 
