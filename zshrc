@@ -187,4 +187,8 @@ then
     bindkey "^[[1;3D" backward-word
     # Doesn't seem to recognize wezterm?
     export TERM=xterm
+
+    if which gls >/dev/null 2>&1; then
+        alias ls='gls --color=auto'
+    fi
 fi
