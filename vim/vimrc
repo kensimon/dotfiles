@@ -18,6 +18,9 @@ call pathogen#infect()
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" This is usually the default except in OpenBSD's port somehow
+set backspace=indent,eol,start
+
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
