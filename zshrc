@@ -177,3 +177,9 @@ fi
 function waitandsaywhendone() {
     while :; do pgrep -f "${1}" >/dev/null 2>&1 || { say "It's done" && break }; sleep 1; done
 }
+
+if [[ "$(uname)" == "OpenBSD" ]]
+then
+    # dumb defaults.
+    export TERM=xterm
+fi
