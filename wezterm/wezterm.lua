@@ -65,6 +65,30 @@ config.keys = {
 
 config.font = wezterm.font('JetBrains Mono')
 
+config.mouse_bindings = {
+    -- Change the default click behavior so that it only selects
+    -- text and doesn't open hyperlinks
+    {
+      event={Up={streak=1, button="Left"}},
+      mods="NONE",
+      action=act.CompleteSelection("PrimarySelection"),
+    },
+
+    -- and make CTRL-Click open hyperlinks
+    {
+      event={Up={streak=1, button="Left"}},
+      mods="CTRL",
+      action=act.OpenLinkAtMouseCursor,
+    },
+
+    -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
+    {
+      event = { Down = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.Nop,
+    }
+}
+
 -- Additional config not checked into git (ssh_domains, etc)
 local local_config = os.getenv("HOME") .. "/.config/wezterm/local.lua"
 local f = io.open(local_config, "r")
