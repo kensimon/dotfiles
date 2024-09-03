@@ -90,6 +90,12 @@ config.mouse_bindings = {
 }
 
 -- Additional config not checked into git (ssh_domains, etc)
+-- I have this defining a function `hydrate_local(config)`, example:
+--
+-- function hydrate_local(config)
+--     config.ssh_domains = { ... }
+-- end
+--
 local local_config = os.getenv("HOME") .. "/.config/wezterm/local.lua"
 local f = io.open(local_config, "r")
 if f ~= nil and io.close(f) then
