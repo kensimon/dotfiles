@@ -174,6 +174,8 @@ then
     alias say='spd-say'
 fi
 
+test -e "${HOME}/.wezterm.zsh" && source "${HOME}/.wezterm.zsh"
+
 function waitandsaywhendone() {
     while :; do pgrep -f "${1}" >/dev/null 2>&1 || { say "It's done" && break }; sleep 1; done
 }

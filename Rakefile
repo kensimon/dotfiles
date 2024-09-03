@@ -34,6 +34,7 @@ $symlinks = {
   '.tmux'                => 'tmux',
   '.minikube.zsh'        => 'minikube.zsh',
   '.config/wezterm'      => 'wezterm',
+  '.wezterm.zsh'         => 'wezterm.zsh',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
