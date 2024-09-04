@@ -184,9 +184,6 @@ if [[ "$(uname)" == "OpenBSD" ]]
 then
     # Pager defaults suck
     LESS=FRXc
-    # inputrc doesn't seem to catch these
-    bindkey "^[[1;3C" forward-word
-    bindkey "^[[1;3D" backward-word
     # Doesn't seem to recognize wezterm?
     export TERM=xterm
 
@@ -194,3 +191,7 @@ then
         alias ls='gls --color=auto'
     fi
 fi
+
+# wezterm seems to need this on non-linux
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
