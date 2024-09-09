@@ -21,6 +21,9 @@ set nocompatible
 " This is usually the default except in OpenBSD's port somehow
 set backspace=indent,eol,start
 
+" Avoids "warning ... changed since reading" warnings
+set autoread
+
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
