@@ -4,3 +4,29 @@ set noerrorbells
 nnoremap ]g :action GotoNextError<CR>
 nnoremap [g :action GotoPreviousError<CR>
 map gh <Action>(ShowErrorDescription)
+
+sethandler <C-2> ide
+sethandler <C-A> ide
+sethandler <C-B> vim
+sethandler <C-C> ide
+sethandler <C-D> vim
+sethandler <C-E> vim
+sethandler <C-F> vim
+sethandler <C-I> vim
+sethandler <C-J> vim
+sethandler <C-K> vim
+sethandler <C-L> vim
+sethandler <C-M> vim
+sethandler <C-N> vim
+sethandler <C-O> vim
+sethandler <C-P> vim
+sethandler <C-Q> vim
+sethandler <C-R> vim
+sethandler <C-S> ide
+sethandler <C-U> vim
+sethandler <C-V> n-v:vim i:vim
+sethandler <C-W> vim
+sethandler <C-X> vim
+sethandler <C-Y> vim
+sethandler <C-[> vim
+sethandler <C-]> vim
