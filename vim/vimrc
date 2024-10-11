@@ -186,5 +186,5 @@ function GetObjCIndent()
 endfunction
 
 if filereadable($HOME . "/.vim/local.vim")
-    source $HOME . "/.vim/local.vim"
+    execute 'source' $HOME . "/.vim/local.vim"
 end
