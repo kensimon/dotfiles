@@ -45,6 +45,9 @@ plugins=(git docker)
 # Worst.  feature.  ever.
 DISABLE_AUTO_UPDATE="true"
 
+# Stupid and hand-holding and slow
+export ZSH_DISABLE_COMPFIX="true"
+
 # Set history options both before and after sourcing oh-my-zsh, because omzsh will overwrite it.
 setopt no_share_history
 setopt inc_append_history
@@ -145,10 +148,10 @@ alias fg=' fg'
 
 alias npm-exec='PATH=$(npm bin):$PATH'
 
-source ~/.kcfg.zsh
-source ~/.kubectl.zsh
-source ~/.minikube.zsh
-source ~/.gopa.zsh
+for i in kcfg kubectl minikube gopa
+do
+    test -e ~/."${i}".zsh && source ~/."${i}".zsh
+done
 
 function cdggh() {
     cd "${GOPATH}/src/github.com/${1}"
