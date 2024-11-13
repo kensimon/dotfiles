@@ -21,7 +21,7 @@ CASE_SENSITIVE="true"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
-DISABLE_LS_COLORS="false"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -40,13 +40,16 @@ DISABLE_LS_COLORS="false"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git docker)
+plugins=()
 
 # Worst.  feature.  ever.
 DISABLE_AUTO_UPDATE="true"
 
 # Stupid and hand-holding and slow
-export ZSH_DISABLE_COMPFIX="true"
+ZSH_DISABLE_COMPFIX="true"
+
+# No, I don't want you to fuck up URL's that I paste
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Set history options both before and after sourcing oh-my-zsh, because omzsh will overwrite it.
 setopt no_share_history
@@ -126,7 +129,7 @@ export PATH=$PATH:/usr/local/sbin
 # rbenv.)
 if [ -e ~/.rbenv ]; then
   export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
+  eval "$(rbenv init --no-rehash -)"
 fi
 
 # Golang stuff
