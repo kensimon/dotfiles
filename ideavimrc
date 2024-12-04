@@ -4,6 +4,7 @@ set noerrorbells
 map ]g <Action>(GotoNextError)
 map [g <Action>(GotoPreviousError)
 map gh <Action>(ShowErrorDescription)
+map gy <Action>(GotoTypeDeclaration)
 
 set ideajoin
 
