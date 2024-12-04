@@ -188,3 +188,4 @@ endfunction
 if filereadable($HOME . "/.vim/local.vim")
     execute 'source' $HOME . "/.vim/local.vim"
 end
+set modeline " not default for root, I still want it
