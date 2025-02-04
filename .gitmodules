@@ -71,3 +71,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "vim/bundles-available/coc.nvim"]
+	path = vim/bundles-available/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
