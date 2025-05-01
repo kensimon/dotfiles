@@ -25,6 +25,17 @@ function active_tab_idx(mux_win)
    end
 end
 
+-- Open tab to right of current tab
+-- https://github.com/wez/wezterm/issues/909#issuecomment-1738831414
+local open_tab_to_right = wezterm.action_callback(function(win, pane)
+  local mux_win = win:mux_window()
+  local idx = active_tab_idx(mux_win)
+  -- wezterm.log_info('active_tab_idx: ', idx)
+  local tab = mux_win:spawn_tab({})
+  -- wezterm.log_info('movetab: ', idx)
+  win:perform_action(wezterm.action.MoveTab(idx+1), pane)
+end)
+
 config.keys = {
   -- Clears the scrollback and viewport, and then sends CTRL-L to ask the
   -- shell to redraw its prompt
@@ -46,20 +57,16 @@ config.keys = {
     mods = 'SHIFT',
     action = act.ScrollToBottom,
   },
-  -- Open tab to right of current tab
-  -- https://github.com/wez/wezterm/issues/909#issuecomment-1738831414
   {
     key = 't',
-    mods = 'CTRL|SHIFT',
+    mods = 'CTRL',
+    action = open_tab_to_right,
+   },
+  {
+    key = 't',
+    mods = 'SUPER',
     -- https://github.com/wez/wezterm/issues/909
-    action = wezterm.action_callback(function(win, pane)
-      local mux_win = win:mux_window()
-      local idx = active_tab_idx(mux_win)
-      -- wezterm.log_info('active_tab_idx: ', idx)
-      local tab = mux_win:spawn_tab({})
-      -- wezterm.log_info('movetab: ', idx)
-      win:perform_action(wezterm.action.MoveTab(idx+1), pane)
-    end),
+    action = open_tab_to_right,
    },
 }
 
