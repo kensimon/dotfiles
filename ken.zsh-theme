@@ -14,7 +14,10 @@ local conda_env='${CONDA_DEFAULT_ENV:+" %{$fg[red]%}‹🐍 ${CONDA_DEFAULT_ENV}
 local ios_sdk='${IOS_SDK_VERSION:+" %{$fg[red]%}‹📱${IOS_SDK_VERSION}›%{$reset_color%}"}'
 
 function rust_version() {
-    if which rustc &>/dev/null; then
+    if which rustup &>/dev/null; then
+        local rust_version_number="$(rustup show active-toolchain | awk -F- '{print $1}')"
+        echo " %{$fg[red]%}‹🦀 ${rust_version_number}›%{$reset_color%}"
+    elif which rustc &>/dev/null; then
         local rust_version_number="$(rustc --version | awk '{print $2}')"
         echo " %{$fg[red]%}‹🦀 ${rust_version_number}›%{$reset_color%}"
     fi
