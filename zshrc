@@ -190,13 +190,16 @@ function waitandsaywhendone() {
 if [[ "$(uname)" == "OpenBSD" ]]
 then
     # Pager defaults suck
-    LESS=FRXc
+    export LESS=FRXc
     # Doesn't seem to recognize wezterm?
     export TERM=xterm
 
     if which gls >/dev/null 2>&1; then
         alias ls='gls --color=auto'
     fi
+else
+    # Case insensitive searches in less
+    export LESS="-iR"
 fi
 
 # wezterm seems to need this on non-linux
