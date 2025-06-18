@@ -183,4 +183,35 @@ endfunction
 if filereadable($HOME . "/.vim/local.vim")
     execute 'source' $HOME . "/.vim/local.vim"
 end
+
+if filereadable($HOME . "/.vim/dark_mode.vim")
+    if has('nvim') && has('nvim-0.5')
+      " Lua heredoc: everything between <<EOF … EOF is executed once.
+      lua << EOF
+          local uv      = vim.loop
+          local marker  = vim.fn.expand(vim.g.s_marker or '~/.vim/dark_mode.vim')
+          local watcher = uv.new_fs_event()
+
+          -- Source the file immediately so we start in the right mode
+          vim.cmd('silent! source ' .. marker)
+          vim.cmd('highlight Normal ctermbg=none')
+
+          -- Start watching for *any* change to the file
+          watcher:start(marker, {}, vim.schedule_wrap(function()
+            -- Re-source on every write-completion event
+            vim.cmd('silent! source ' .. marker)
+            --  for some reason this gets reset
+            vim.cmd('highlight Normal ctermbg=none')
+          end))
+
+          -- Clean up when Nvim exits (good housekeeping)
+          vim.api.nvim_create_autocmd('VimLeavePre', {
+              callback = function() watcher:stop(); watcher:close() end,
+          })
+EOF
+    else
+        execute 'source' $HOME . "/.vim/dark_mode.vim"
+    endif
+endif
+
 set modeline " not default for root, I still want it

@@ -2,7 +2,6 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = wezterm.config_builder()
 
-config.color_scheme = 'Vs Code Light+ (Gogh)'
 config.font_size = 10.0
 config.initial_rows = 60
 config.initial_cols = 132
@@ -108,6 +107,22 @@ local f = io.open(local_config, "r")
 if f ~= nil and io.close(f) then
     dofile(local_config)
     hydrate_local(config)
+end
+
+-- Similarly a separate file for dark mode, as I want to be able to easily
+-- completely rewrite it.
+rawset(_G, "dark_mode", false)
+dark_mode = false
+
+local darkmode_config_path = os.getenv("HOME") .. "/.config/wezterm/dark_mode.lua"
+local f = io.open(darkmode_config_path, "r")
+if f ~= nil and io.close(f) then
+    dofile(darkmode_config_path)
+end
+if dark_mode then
+    config.color_scheme = 'Vs Code Dark+ (Gogh)'
+else
+    config.color_scheme = 'Vs Code Light+ (Gogh)'
 end
 
 

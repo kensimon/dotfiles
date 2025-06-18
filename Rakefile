@@ -35,6 +35,7 @@ $symlinks = {
   '.minikube.zsh'        => 'minikube.zsh',
   '.config/wezterm'      => 'wezterm',
   '.wezterm.zsh'         => 'wezterm.zsh',
+  '.bin/dark-mode.sh'    => 'bin/dark-mode.sh',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
@@ -81,7 +82,7 @@ task :symlink => $submodules do
   $symlinks.each do |dotfile, path|
     dotfile_pathname = Pathname.new(File.join(ENV['HOME'], dotfile))
     path_pathname    = Pathname.new(File.join(this_directory, path))
-    if !File.exists?(File.dirname(dotfile_pathname.to_s))
+    if !File.exist?(File.dirname(dotfile_pathname.to_s))
       sh "mkdir -p #{File.dirname(dotfile_pathname.to_s)}"
     end
 
