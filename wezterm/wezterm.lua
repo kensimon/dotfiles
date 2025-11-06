@@ -58,7 +58,7 @@ config.keys = {
   },
   {
     key = 't',
-    mods = 'CTRL',
+    mods = 'CTRL|SHIFT',
     action = open_tab_to_right,
    },
   {
