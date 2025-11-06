@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# This wraps rustfmt with nightly options for imports_granularity that is not
+# available in non-nightly rust.
+#
+# === Using with vim:
+#
+# Copy someplace global:
+#
+#    cp dev/bin/rustfmt-wrapper ~/.local/bin
+#
+# Add this to vimrc:
+#
+#    let g:rustfmt_command = "~/.local/bin/rustfmt-nightly"
+
+exec rustfmt +nightly --config imports_granularity=Module,group_imports=StdExternalCrate,skip_children=true,edition=2024 "$@"
