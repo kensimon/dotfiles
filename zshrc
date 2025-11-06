@@ -205,3 +205,5 @@ fi
 # wezterm seems to need this on non-linux
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+
+export PATH="${HOME}/.local/bin:${PATH}"
