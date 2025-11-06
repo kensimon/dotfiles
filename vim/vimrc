@@ -180,6 +180,12 @@ function GetObjCIndent()
     return theIndent
 endfunction
 
+" Map ]q to go to the next quickfix item
+nnoremap ]q :cnext<CR>
+
+" Map [q to go to the previous quickfix item
+nnoremap [q :cprev<CR>
+
 if filereadable($HOME . "/.vim/local.vim")
     execute 'source' $HOME . "/.vim/local.vim"
 end
