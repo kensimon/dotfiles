@@ -35,7 +35,7 @@ $symlinks = {
   '.minikube.zsh'        => 'minikube.zsh',
   '.config/wezterm'      => 'wezterm',
   '.wezterm.zsh'         => 'wezterm.zsh',
-  '.bin/dark-mode.sh'    => 'bin/dark-mode.sh',
+  '.local/bin/dark-mode.sh'    => 'bin/dark-mode.sh',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}

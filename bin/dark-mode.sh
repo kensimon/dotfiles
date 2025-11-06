@@ -10,7 +10,8 @@ function usage() {
 function enable() {
     echo "set bg=dark" >"${HOME}/.dotfiles/vim/dark_mode.vim"
     echo "dark_mode = true" >"${HOME}/.config/wezterm/dark_mode.lua"
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    echo -n "on" >"${HOME}/.config/dark-mode-applet/state"
+    gsettings set org.x.apps.portal color-scheme 'prefer-dark'
     gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Aqua'
     gsettings set org.cinnamon.theme name 'Mint-Y-Dark-Aqua'
     gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/ksimon/Pictures/40lS66E.jpeg'
@@ -22,7 +23,8 @@ function enable() {
 function disable() {
     echo "set bg=light" >"${HOME}/.vim/dark_mode.vim"
     echo "dark_mode = false" >"${HOME}/.config/wezterm/dark_mode.lua"
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+    echo -n "off" >"${HOME}/.config/dark-mode-applet/state"
+    gsettings set org.x.apps.portal color-scheme 'prefer-light'
     gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Aqua'
     gsettings set org.cinnamon.theme name 'Mint-Y-Aqua'
     gsettings set org.cinnamon.desktop.background picture-uri 'file:///usr/share/backgrounds/linuxmint-tessa/kemsley_kluane.jpg'
