@@ -221,4 +221,4 @@ EOF
     endif
 endif
 
-set modeline " not default for root, I still want it
+set modeline
