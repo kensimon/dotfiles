@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-cd "$(dirname "${0}")"
+cd "${HOME}"
 
-if [[ -e ./vim/local.vim ]]; then
+if [[ -e .vim/local.vim ]]; then
     echo "./vim/local.vim already exists, not touching. Overwrite with:"
     echo
     echo "    cd ~/.vim && ln -s coc-settings.vim local.vim"
@@ -12,7 +12,7 @@ else
     (cd ~/.vim && ln -sv coc-settings.vim local.vim)
 fi
 
-if [[ -e ./vim/bundle/coc.nvim ]]; then
+if [[ -e .vim/bundle/coc.nvim ]]; then
     echo "./vim/bundle/coc.nvim already exists, not touching. Overwrite with:"
     echo
     echo "    cd ~/.vim/bundle && ln -s ../bundles-available/coc.nvim ."
