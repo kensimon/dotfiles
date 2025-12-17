@@ -1,4 +1,4 @@
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+local return_code="%(?..%(130?..%{$fg[red]%}%? ↵%{$reset_color%}))"
 
 if [[ "$(whoami)" == "root" ]]
 then
