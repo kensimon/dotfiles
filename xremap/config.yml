@@ -1,0 +1,31 @@
+# The point of this file is to make mac-like keyboard shortcuts using LEFTALT,
+# which is labelled as the command key on the MX keys keyboard
+keypress_delay_ms: 10
+
+keymap:
+  - name: "Global: Common for all apps"
+    remap:
+      KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
+      KEY_LEFTALT-KEY_Q: KEY_LEFTALT-KEY_F4
+
+  - name: "WezTerm: make Alt+C/V do terminal copy/paste, Alt+W/T do ctrl+shift+W/T"
+    application:
+      only: ["/org.wezfurlong.wezterm/"]
+    remap:
+      KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_C
+      KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_V
+      KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_W
+      KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_T
+
+  - name: "Non-terminal: Global versions of terminal-overridden shortcuts"
+    remap:
+      KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_C
+      KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_V
+      KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_W
+      KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_T
+
+  - name: "Firefox"
+    application:
+      only: ["/firefox/"]
+    remap:
+      KEY_LEFTALT-KEY_L: KEY_LEFTCTRL-KEY_L

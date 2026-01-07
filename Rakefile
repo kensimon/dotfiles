@@ -36,6 +36,7 @@ $symlinks = {
   '.wezterm.zsh'               => 'wezterm.zsh',
   '.local/bin/dark-mode.sh'    => 'bin/dark-mode.sh',
   '.local/bin/rustfmt-wrapper' => 'bin/rustfmt-wrapper',
+  '.config/xremap/config.yml'  => 'xremap/config.yml',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
