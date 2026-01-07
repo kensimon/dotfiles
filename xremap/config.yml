@@ -7,15 +7,22 @@ keymap:
     remap:
       KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
       KEY_LEFTALT-KEY_Q: KEY_LEFTALT-KEY_F4
+      KEY_LEFTALT-KEY_R: KEY_LEFTCTRL-KEY_R
+      KEY_LEFTALT-KEY_LEFTSHIFT-KEY_LEFTBRACE: KEY_LEFTCTRL-KEY_PAGEUP
+      KEY_LEFTALT-KEY_LEFTSHIFT-KEY_RIGHTBRACE: KEY_LEFTCTRL-KEY_PAGEDOWN
+      KEY_LEFTALT-KEY_LEFTBRACE: KEY_LEFTALT-KEY_LEFT
+      KEY_LEFTALT-KEY_RIGHTBRACE: KEY_LEFTALT-KEY_RIGHT
 
   - name: "WezTerm: make Alt+C/V do terminal copy/paste, Alt+W/T do ctrl+shift+W/T"
     application:
-      only: ["/org.wezfurlong.wezterm/"]
+      only: ["/org.wezfurlong.wezterm/", "/gnome-terminal-server/"]
     remap:
       KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_C
       KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_V
       KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_W
       KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_T
+      KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_F
+      KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_N
 
   - name: "Non-terminal: Global versions of terminal-overridden shortcuts"
     remap:
@@ -23,6 +30,8 @@ keymap:
       KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_V
       KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_W
       KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_T
+      KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_F
+      KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_N
 
   - name: "Firefox"
     application:
