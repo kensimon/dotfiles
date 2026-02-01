@@ -7,15 +7,23 @@ keymap:
     remap:
       KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
       KEY_LEFTALT-KEY_Q: KEY_LEFTALT-KEY_F4
-      KEY_LEFTALT-KEY_R: KEY_LEFTCTRL-KEY_R
+      KEY_LEFTALT-KEY_X: KEY_LEFTCTRL-KEY_X
+      KEY_LEFTALT-KEY_Z: KEY_LEFTCTRL-KEY_Z
+      KEY_LEFTALT-KEY_LEFTSHIFT-KEY_Z: KEY_LEFTCTRL-KEY_Y
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_LEFTBRACE: KEY_LEFTCTRL-KEY_PAGEUP
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_RIGHTBRACE: KEY_LEFTCTRL-KEY_PAGEDOWN
       KEY_LEFTALT-KEY_LEFTBRACE: KEY_LEFTALT-KEY_LEFT
       KEY_LEFTALT-KEY_RIGHTBRACE: KEY_LEFTALT-KEY_RIGHT
 
+  - name: "Guake overrides"
+    application:
+      only: ["/guake/"]
+    remap:
+      KEY_LEFTALT-KEY_W: KEY_LEFTALT-KEY_W
+
   - name: "WezTerm: make Alt+C/V do terminal copy/paste, Alt+W/T do ctrl+shift+W/T"
     application:
-      only: ["/org.wezfurlong.wezterm/", "/gnome-terminal-server/"]
+      only: ["/org.wezfurlong.wezterm/", "/gnome-terminal-server/", "/guake/", "/org.gnome.Ptyxis/"]
     remap:
       KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_C
       KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_V
@@ -23,8 +31,23 @@ keymap:
       KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_T
       KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_F
       KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_N
+      # I often use alt+backspace "normally" in terminals
+      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTALT-KEY_BACKSPACE
 
-  - name: "Non-terminal: Global versions of terminal-overridden shortcuts"
+  - name: "Firefox"
+    application:
+      only: ["/firefox/"]
+    remap:
+      KEY_LEFTALT-KEY_L: KEY_LEFTCTRL-KEY_L
+
+  - name: "Rustrover"
+    application:
+      only: ["/jetbrains-rustrover/"]
+    remap:
+      # Keep Alt+R as normal
+      KEY_LEFTALT-KEY_R: KEY_LEFTALT-KEY_R
+
+  - name: "Global versions of app-overridden shortcuts"
     remap:
       KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_C
       KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_V
@@ -32,9 +55,5 @@ keymap:
       KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_T
       KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_F
       KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_N
-
-  - name: "Firefox"
-    application:
-      only: ["/firefox/"]
-    remap:
-      KEY_LEFTALT-KEY_L: KEY_LEFTCTRL-KEY_L
+      KEY_LEFTALT-KEY_R: KEY_LEFTCTRL-KEY_R
+      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_U
