@@ -1,43 +1,71 @@
 # The point of this file is to make mac-like keyboard shortcuts using LEFTALT,
 # which is labelled as the command key on the MX keys keyboard
+#
+# Note: I have cinnamon swapping my Alt and Win keys, because I want the key
+# next to spacebar to be treated as if it's the "command" key (ie. Super), and
+# the key to the left of that as the "Option" key (ie. "alt"). But the
+# keybindings here are applied before cinnamon sees them.
+#
+# So to map for example "Cmd+{" to "Alt+Left" for back button emulation (that
+# is, "The key to the left of the spacebar + {" mapping to what should be seen
+# by apps as "Alt+Left"), I actually have to map "Alt+{" to "Win+Left", because
+# Alt is the real command key before cinnamon swaps it, and producing
+# "Win+Left" will be rewritten by cinnamon back to "Alt+Left" (which is
+# commonly "back".)
+
 keypress_delay_ms: 10
 
 keymap:
   - name: "Global: Common for all apps"
     remap:
+      # Select all
       KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
-      KEY_LEFTALT-KEY_Q: KEY_LEFTALT-KEY_F4
+      # Close window
+      KEY_LEFTALT-KEY_Q: WIN_L-KEY_F4 # seen by apps as Alt-F4
+      # Cut
       KEY_LEFTALT-KEY_X: KEY_LEFTCTRL-KEY_X
+      # Undo
       KEY_LEFTALT-KEY_Z: KEY_LEFTCTRL-KEY_Z
+      # Redo
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_Z: KEY_LEFTCTRL-KEY_Y
+      # Switch one tab left
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_LEFTBRACE: KEY_LEFTCTRL-KEY_PAGEUP
+      # Switch one tab right
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_RIGHTBRACE: KEY_LEFTCTRL-KEY_PAGEDOWN
-      KEY_LEFTALT-KEY_LEFTBRACE: KEY_LEFTALT-KEY_LEFT
-      KEY_LEFTALT-KEY_RIGHTBRACE: KEY_LEFTALT-KEY_RIGHT
+      # Clear line
+      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_U
+      # Back
+      KEY_LEFTALT-KEY_LEFTBRACE: WIN_L-KEY_LEFT   # seen by apps as Alt-Left
+      # Forward
+      KEY_LEFTALT-KEY_RIGHTBRACE: WIN_L-KEY_RIGHT # seen by apps as Alt-Right
 
-  - name: "Guake overrides"
-    application:
-      only: ["/guake/"]
-    remap:
-      KEY_LEFTALT-KEY_W: KEY_LEFTALT-KEY_W
-
-  - name: "WezTerm: make Alt+C/V do terminal copy/paste, Alt+W/T do ctrl+shift+W/T"
+  - name: "Terminals"
     application:
       only: ["/org.wezfurlong.wezterm/", "/gnome-terminal-server/", "/guake/", "/org.gnome.Ptyxis/"]
     remap:
+      # Terminals often use ctrl+shift to avoid conflict with terminal ctrl characters
       KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_C
       KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_V
       KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_W
       KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_T
       KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_F
       KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_N
-      # I often use alt+backspace "normally" in terminals
-      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTALT-KEY_BACKSPACE
+
+      # No-op behavior for shortcuts we rewrite globally below (terminals
+      WIN_L-KEY_BACKSPACE: WIN_L-KEY_BACKSPACE # Seen by terminals as alt-backspace
+
+      # Alt keys seem better-supported than ctrl for going back/forward a word,
+      # in *most* readline stuff in terminals for me (but I have a custom
+      # .inputrc)
+      WIN_L-KEY_LEFT: WIN_L-KEY_LEFT
+      WIN_L-KEY_RIGHT: WIN_L-KEY_RIGHT
+      WIN_L-KEY_BACKSPACE: WIN_L-KEY_BACKSPACE
 
   - name: "Firefox"
     application:
       only: ["/firefox/"]
     remap:
+      # Focus URL bar
       KEY_LEFTALT-KEY_L: KEY_LEFTCTRL-KEY_L
 
   - name: "Rustrover"
@@ -45,15 +73,25 @@ keymap:
       only: ["/jetbrains-rustrover/"]
     remap:
       # Keep Alt+R as normal
-      KEY_LEFTALT-KEY_R: KEY_LEFTALT-KEY_R
+      KEY_LEFTALT-KEY_R: WIN_L-KEY_R # Seen by rustrover as Alt+R
 
   - name: "Global versions of app-overridden shortcuts"
     remap:
-      KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_C
-      KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_V
-      KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_W
-      KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_T
-      KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_F
-      KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_N
-      KEY_LEFTALT-KEY_R: KEY_LEFTCTRL-KEY_R
-      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_U
+      # Define global behavior for keys that have app-specific overrides above
+      # (they can't go in the topmost global section, because first section
+      # wins.)
+      #
+      # Rules should only go in here if they're matched by an app-specific
+      # override. Otherwise they should go into the first global section.
+      KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_C # Copy
+      KEY_LEFTALT-KEY_V: KEY_LEFTCTRL-KEY_V # Paste
+      KEY_LEFTALT-KEY_W: KEY_LEFTCTRL-KEY_W # Close tab
+      KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_T # New tab
+      KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_F # Find
+      KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_N # New window
+      KEY_LEFTALT-KEY_R: KEY_LEFTCTRL-KEY_R # Reload
+
+      # Most keyboard input areas use ctrl+left/right to go back/foward a word
+      WIN_L-KEY_LEFT: KEY_LEFTCTRL-KEY_LEFT
+      WIN_L-KEY_RIGHT: KEY_LEFTCTRL-KEY_RIGHT
+      WIN_L-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_BACKSPACE
