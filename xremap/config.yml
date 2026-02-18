@@ -72,8 +72,9 @@ keymap:
     application:
       only: ["/jetbrains-rustrover/"]
     remap:
-      # Keep Alt+R as normal
+      # Rustrover can't map Win keys due to a bug: Map Alt+R to run and Alt+B to build
       KEY_LEFTALT-KEY_R: WIN_L-KEY_R # Seen by rustrover as Alt+R
+      KEY_LEFTALT-KEY_B: WIN_L-KEY_B # Seen by rustrover as Alt+B
 
   - name: "Global versions of app-overridden shortcuts"
     remap:
