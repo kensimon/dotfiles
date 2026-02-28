@@ -46,3 +46,4 @@ xcuserdata/
 tscommand-*.tmp.txt
 /.rgignore
 .local_envrc
+__pycache__/
