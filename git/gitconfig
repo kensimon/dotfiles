@@ -44,3 +44,18 @@
 
 [include]
     path = ~/.gitconfig.local
+[diff]
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+	algorithm = histogram
+[commit]
+	verbose = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[tag]
+	sort = version:refname
+[branch]
+	sort = -committerdate
