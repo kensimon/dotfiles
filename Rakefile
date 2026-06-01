@@ -18,6 +18,7 @@ $symlinks = {
   '.inputrc'                   => 'inputrc',
   '.bash_profile'              => 'bash_profile',
   '.irbrc'                     => 'irbrc',
+  '.gitconfig'                 => 'git/gitconfig',
   '.gitignore'                 => 'git/gitignore',
   '.git'                       => 'git',
   '.rbenv'                     => 'rbenv',

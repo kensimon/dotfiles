@@ -47,3 +47,6 @@
     autoupdate = true
 [merge]
     conflictStyle = zdiff3
+
+[include]
+    path = ~/.gitconfig.local
