@@ -32,8 +32,6 @@ keymap:
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_LEFTBRACE: KEY_LEFTCTRL-KEY_PAGEUP
       # Switch one tab right
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_RIGHTBRACE: KEY_LEFTCTRL-KEY_PAGEDOWN
-      # Clear line
-      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_U
       # Back
       KEY_LEFTALT-KEY_LEFTBRACE: WIN_L-KEY_LEFT   # seen by apps as Alt-Left
       # Forward
@@ -53,6 +51,8 @@ keymap:
 
       # No-op behavior for shortcuts we rewrite globally below (terminals
       WIN_L-KEY_BACKSPACE: WIN_L-KEY_BACKSPACE # Seen by terminals as alt-backspace
+      # Kill line
+      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_U
 
       # Alt keys seem better-supported than ctrl for going back/forward a word,
       # in *most* readline stuff in terminals for me (but I have a custom
@@ -60,6 +60,11 @@ keymap:
       WIN_L-KEY_LEFT: WIN_L-KEY_LEFT
       WIN_L-KEY_RIGHT: WIN_L-KEY_RIGHT
       WIN_L-KEY_BACKSPACE: WIN_L-KEY_BACKSPACE
+
+      # Wezterm doesn't seem to pass shift+enter properly to apps (like codex)
+      # that care about the difference between CR and LF. Make shift+enter send
+      # ctrl+J, which is LF.
+      KEY_LEFTSHIFT-KEY_ENTER: KEY_LEFTCTRL-KEY_J
 
   - name: "Firefox"
     application:
@@ -96,3 +101,6 @@ keymap:
       WIN_L-KEY_LEFT: KEY_LEFTCTRL-KEY_LEFT
       WIN_L-KEY_RIGHT: KEY_LEFTCTRL-KEY_RIGHT
       WIN_L-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_BACKSPACE
+
+      # Clear line
+      KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_BACKSPACE
