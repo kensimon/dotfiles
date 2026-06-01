@@ -178,7 +178,7 @@ if [[ "$(uname)" == "Linux" ]]
 then
     alias pbpaste='xclip -selection c -o'
     alias pbcopy='xclip -selection c -i'
-    alias say='spd-say'
+    alias say='spd-say -w'
 fi
 
 test -e "${HOME}/.wezterm.zsh" && source "${HOME}/.wezterm.zsh"
