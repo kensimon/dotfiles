@@ -222,3 +222,4 @@ EOF
 endif
 
 set modeline
+set maxmempattern=5000
