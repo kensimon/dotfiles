@@ -3,3 +3,4 @@ wezterm/local.lua
 wezterm/dark_mode.lua
 vim/local.vim
 vim/dark_mode.vim
+vim/bundle/coc.nvim
