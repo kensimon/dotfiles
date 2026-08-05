@@ -15,8 +15,12 @@ local ios_sdk='${IOS_SDK_VERSION:+" %{$fg[red]%}‹📱${IOS_SDK_VERSION}›%{$r
 
 function rust_version() {
     if which rustup &>/dev/null; then
-        local rust_version_number="$(rustup show active-toolchain | awk -F- '{print $1}')"
-        echo " %{$fg[red]%}‹🦀 ${rust_version_number}›%{$reset_color%}"
+        local rustup_output="$(rustup show active-toolchain --verbose)"
+        if echo $rustup_output | grep -q overridden
+        then
+            local rust_version_number="$(echo "${rustup_output}" | grep ^compiler | awk '{print $3}')"
+            echo " %{$fg[red]%}‹🦀 ${rust_version_number}›%{$reset_color%}"
+        fi
     elif which rustc &>/dev/null; then
         local rust_version_number="$(rustc --version | awk '{print $2}')"
         echo " %{$fg[red]%}‹🦀 ${rust_version_number}›%{$reset_color%}"
