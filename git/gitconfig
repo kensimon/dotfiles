@@ -19,6 +19,7 @@
   fetchmr = "!sh -c 'git fetch origin merge-requests/$0/head'"
   fetchpr = "!sh -c 'git fetch origin pull/$0/head'"
   copr = "!sh -c 'git fetch origin pull/$0/head && git checkout -b pull-request/$0 FETCH_HEAD'"
+  range-diff-last = "!sh -c 'LAST=${1:-1}; git range-diff $(git merge-base origin/${0}@{${LAST}} origin/main)..origin/${0}@{${LAST}} $(git merge-base origin/${0} origin/main)..origin/${0}'"
 
 [color]
   branch = auto
