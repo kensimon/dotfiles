@@ -52,4 +52,4 @@ sethandler <C-Y> a:vim
 sethandler <C-[> a:vim
 sethandler <C-]> a:vim
 # Custom
-sethandler <C-V> n-v:vim i:ide
+sethandler <C-V> n-v:vim i:ide c:ide
