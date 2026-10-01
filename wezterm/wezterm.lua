@@ -10,6 +10,7 @@ config.enable_scroll_bar = true
 config.scrollback_lines = 1000000
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false
+config.enable_wayland = false
 
 -- fuuuuck ligatures
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
