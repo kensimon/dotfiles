@@ -11,6 +11,7 @@ config.scrollback_lines = 1000000
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false
 config.enable_wayland = false
+-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 -- fuuuuck ligatures
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
@@ -68,8 +69,63 @@ config.keys = {
     mods = 'SUPER',
     -- https://github.com/wez/wezterm/issues/909
     action = open_tab_to_right,
-   },
+  },
+  -- ctrl+shift+a enters copy mode (so doing it twice selects all)
+  {
+    key = 'a',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivateCopyMode,
+  },
 }
+
+if wezterm.gui then
+  copy_mode = wezterm.gui.default_key_tables().copy_mode
+  search_mode = wezterm.gui.default_key_tables().search_mode
+
+  -- Make sure we clear the pattern when closing, I hate having to remember to do that
+  table.insert(
+    search_mode,
+    {
+      key = 'Escape',
+      mods = 'NONE',
+      action = act.Multiple {
+        { CopyMode = 'ClearPattern' },
+        { CopyMode = 'Close' },
+      }
+    }
+  )
+
+  -- Enter finds previous
+  table.insert(
+    search_mode,
+    { key = 'Enter', mods = 'NONE', action = act.CopyMode 'PriorMatch' }
+  )
+
+  -- Shift+Enter finds next (xremap turns shift+enter into ctrl+j)
+  table.insert(
+    search_mode,
+    { key = 'j', mods = 'CTRL', action = act.CopyMode 'NextMatch' }
+  )
+
+  -- Ctrl+Shift+A selects all in copy mode
+  table.insert(
+    copy_mode,
+    {
+      key = 'a',
+      mods = 'CTRL|SHIFT',
+      action = act.Multiple {
+        { CopyMode = 'MoveToScrollbackTop' },
+        { CopyMode = { SetSelectionMode = 'Line' } },
+        { CopyMode = 'MoveToScrollbackBottom' },
+      }
+    }
+  )
+
+  config.key_tables = {
+    copy_mode = copy_mode,
+    search_mode = search_mode,
+  }
+end
 
 config.font = wezterm.font('JetBrains Mono')
 

@@ -18,8 +18,6 @@ keypress_delay_ms: 10
 keymap:
   - name: "Global: Common for all apps"
     remap:
-      # Select all
-      KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
       # Close window
       KEY_LEFTALT-KEY_Q: WIN_L-KEY_F4 # seen by apps as Alt-F4
       # Cut
@@ -48,6 +46,7 @@ keymap:
       KEY_LEFTALT-KEY_T: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_T
       KEY_LEFTALT-KEY_F: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_F
       KEY_LEFTALT-KEY_N: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_N
+      KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_A
 
       # No-op behavior for shortcuts we rewrite globally below (terminals
       WIN_L-KEY_BACKSPACE: WIN_L-KEY_BACKSPACE # Seen by terminals as alt-backspace
@@ -72,6 +71,8 @@ keymap:
     remap:
       # Focus URL bar
       KEY_LEFTALT-KEY_L: KEY_LEFTCTRL-KEY_L
+      # Select all
+      KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
 
   - name: "Rustrover"
     application:
@@ -104,3 +105,6 @@ keymap:
 
       # Clear line
       KEY_LEFTALT-KEY_BACKSPACE: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_BACKSPACE
+
+      # Select all
+      KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
