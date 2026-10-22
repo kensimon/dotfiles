@@ -10,8 +10,8 @@ config.enable_scroll_bar = true
 config.scrollback_lines = 1000000
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false
-config.enable_wayland = false
--- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.enable_wayland = true
+config.window_decorations = "TITLE|RESIZE"
 
 -- fuuuuck ligatures
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
