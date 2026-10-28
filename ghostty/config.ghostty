@@ -1,0 +1,25 @@
+theme = light:Apple System Colors Light,dark:Apple System Colors
+font-size = 10
+window-height = 60
+window-width = 132
+shell-integration-features = ssh-env, ssh-terminfo, cursor
+bell-features = no-title
+link-previews = false
+scrollback-limit = 10485760000
+quit-after-last-window-closed = false
+window-inherit-working-directory = false
+# default, but doesn't hurt to be explicit:
+tab-inherit-working-directory = true
+resize-overlay = never
+# only effects x11/middle-click buffer but I hate that one anyway
+copy-on-select = false
+# fuuuuuuuuuuuuuuuck ligatures
+font-feature = -calt, -liga, -dlig
+
+app-notifications = no-clipboard-copy, no-config-reload
+
+### Keybindings
+
+keybind = super+k=clear_screen
+keybind = super+[=jump_to_prompt:-1
+keybind = super+]=jump_to_prompt:1

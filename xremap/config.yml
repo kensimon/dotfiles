@@ -30,14 +30,10 @@ keymap:
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_LEFTBRACE: KEY_LEFTCTRL-KEY_PAGEUP
       # Switch one tab right
       KEY_LEFTALT-KEY_LEFTSHIFT-KEY_RIGHTBRACE: KEY_LEFTCTRL-KEY_PAGEDOWN
-      # Back
-      KEY_LEFTALT-KEY_LEFTBRACE: WIN_L-KEY_LEFT   # seen by apps as Alt-Left
-      # Forward
-      KEY_LEFTALT-KEY_RIGHTBRACE: WIN_L-KEY_RIGHT # seen by apps as Alt-Right
 
   - name: "Terminals"
     application:
-      only: ["/org.wezfurlong.wezterm/", "/gnome-terminal-server/", "/guake/", "/org.gnome.Ptyxis/"]
+      only: ["/org.wezfurlong.wezterm/", "/gnome-terminal-server/", "/guake/", "/org.gnome.Ptyxis/", "/com.mitchellh.ghostty/"]
     remap:
       # Terminals often use ctrl+shift to avoid conflict with terminal ctrl characters
       KEY_LEFTALT-KEY_C: KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_C
@@ -60,10 +56,22 @@ keymap:
       WIN_L-KEY_RIGHT: WIN_L-KEY_RIGHT
       WIN_L-KEY_BACKSPACE: WIN_L-KEY_BACKSPACE
 
+  - name: "Wezterm"
+    application:
+      only: ["/org.wezfurlong.wezterm/"]
+    remap:
       # Wezterm doesn't seem to pass shift+enter properly to apps (like codex)
       # that care about the difference between CR and LF. Make shift+enter send
       # ctrl+J, which is LF.
       KEY_LEFTSHIFT-KEY_ENTER: KEY_LEFTCTRL-KEY_J
+
+  - name: "ghostty"
+    application:
+      only: ["/com.mitchellh.ghostty/"]
+    remap:
+      # Make win+{ and win+} pass through
+      KEY_LEFTALT-KEY_LEFTBRACE: KEY_LEFTALT-KEY_LEFTBRACE
+      KEY_LEFTALT-KEY_RIGHTBRACE: KEY_LEFTALT-KEY_RIGHTBRACE
 
   - name: "Firefox"
     application:
@@ -108,3 +116,8 @@ keymap:
 
       # Select all
       KEY_LEFTALT-KEY_A: KEY_LEFTCTRL-KEY_A
+
+      # Back
+      KEY_LEFTALT-KEY_LEFTBRACE: WIN_L-KEY_LEFT   # seen by apps as Alt-Left
+      # Forward
+      KEY_LEFTALT-KEY_RIGHTBRACE: WIN_L-KEY_RIGHT # seen by apps as Alt-Right

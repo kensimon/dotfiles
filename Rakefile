@@ -38,6 +38,7 @@ $symlinks = {
   '.local/bin/dark-mode.sh'    => 'bin/dark-mode.sh',
   '.local/bin/rustfmt-wrapper' => 'bin/rustfmt-wrapper',
   '.config/xremap/config.yml'  => 'xremap/config.yml',
+  '.config/ghostty/config.ghostty'  => 'ghostty/config.ghostty',
 }
 
 $submodules = $submodule_base_dirs.map{|f| "#{f}/.git"}
