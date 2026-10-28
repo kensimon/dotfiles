@@ -31,7 +31,7 @@ if which git &> /dev/null; then
   git_branch=' $(git_prompt_info)'
 fi
 
-PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${ios_sdk}\$(rust_version)${git_branch}
+PROMPT="╭─${user_host} ${current_dir}${conda_env}${rbenv_version}${ios_sdk}${git_branch}
 ╰─%B$%b "
 RPS1="${return_code}"
 
