@@ -1,4 +1,4 @@
-theme = light:Apple System Colors Light,dark:Apple System Colors
+theme = light:Atom One Light,dark:Ayu
 font-size = 10
 window-height = 60
 window-width = 132
