@@ -23,3 +23,4 @@ app-notifications = no-clipboard-copy, no-config-reload
 keybind = super+k=clear_screen
 keybind = super+[=jump_to_prompt:-1
 keybind = super+]=jump_to_prompt:1
+keybind = super+\=toggle_tab_overview
